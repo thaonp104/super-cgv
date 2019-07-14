@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <title>Document</title> -->
+</head>
+<body>
+    <div >
+        <div class="container-fluit">
+            <div class="row1">
+                <div class="select">
+                    <ul>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="intro">
+                <div class="slide">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"> </li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                            <li data-target="#myCarousel" data-slide-to="5"></li>
+                            <li data-target="#myCarousel" data-slide-to="6"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <a href="#"><img src="images/980_11.jpg" style="width:100%;"></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="images/art-50k_happy-ending---chi-tro-ly-cua-anh_980-x-448.jpg"
+                                        style="width:100%;"></a>
+                            </div>
+
+                            <div class="item">
+                                <a href="#"><img src="images/980-x-448_6.jpg" style="width:100%;"></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/980x448_55.jpg" style="width:100%;"></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/thu_thach_captain_marvel_980x448.jpg" style="width:100%;"></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/delivery-980x448.jpg" style="width:100%;"></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="images/rolling_88k.jpg" style="width:100%;"></a>
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="movie_selection">
+                <div class="text">
+                    <div class="font_text">
+                    </div>
+                </div>
+                <div class="mother_slide">
+                    <div class="slide">
+                        <ul>
+                            <li class="mySlides" ng-repeat="item in listFilm">
+                                <span class="movie_rating movie_rating_c18" ng-if="  item.star===1 "></span>
+                                <span class="movie_rating movie_rating_c13" ng-if="  item.star===2 "></span>
+                                <span class="movie_rating movie_rating_b"  ng-if="  item.star===3 "></span>
+                                <span class="movie_rating movie_rating_c16"  ng-if="  item.star===4 "></span>
+                                <a href="#">
+                                    <img src="{{ item.cover }}" >
+                                </a>
+                                <input type="hidden">
+                                <div class="conect_film_back"></div>
+                                <div class="conect_film">
+                                    <h3>{{ item.name }}</h3>
+                                    <a href="#" class="button" alt="{{ item }}">Xem chi tiết</a>
+                                    <a class="button btn_booking">
+                                        <i class="fas fa-tty"></i>
+                                        <span>Mua vé</span>
+                                    </a>
+                                </div>
+                                <div class="play_button">
+
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="prev()" class="selection_lui"></button>
+                    <button onclick="next()" class="selection_tien"></button>
+                </div>
+            </div>
+        </div>
+        <!-- banner -->
+        <!-- left -->
+        <div class="stick1">
+            <a href="#">
+                <img src="images/baner-left-vn.jpg">
+            </a>
+        </div>
+        <!-- right -->
+        <div class="stick2">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="images/en-banner-right-1.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/en-banner-right-2.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/vn-banner-right-3.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/vn-banner-right-4.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- end banner -->
+
+        <!-- event -->
+
+        <div class="event">
+            <div class="text">
+                <div class="font_text"></div>
+            </div>
+            <ul class="toggle_tabs">
+                <li class="current">
+                    <a href="#">
+                        <i class="	far fa-hand-point-right" style="font-size: 20px; margin-right: 5px;"></i>
+                        Tin Mới & Ưu Đãi
+                    </a>
+                </li>
+                <li class="last">
+                    <a href="#">Thành Viên CGV</a>
+                </li>
+            </ul>
+            <div class="mother_slide">
+                <div class="slide">
+                    <ul>
+                        <li class="mySlides">
+                            <a href="#">
+                                <img src="images/captainmarvel_combo_240x201.jpg">
+                            </a>
+                        </li>
+                        <li class="mySlides">
+                            <a href="#">
+                                <img src="images/sjora_240x201.jpg">
+                            </a>
+                        </li>
+                        <li class="mySlides">
+                            <a href="#">
+                                <img src="images/gudetama2_240-x-201.jpg">
+                            </a>
+                        </li>
+                        <li class="mySlides">
+                            <a href="#">
+                                <img src="images/waffle_240-x-201.jpg">
+                            </a>
+                        </li>
+                        <li class="mySlides">
+                            <a href="#">
+                                <img src="images/web_240x201_13.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- khi nhấn bắt sự kiện prev2() -->
+                <button onclick="prev2()" class="selection_lui2"></button>
+                <!-- khi nhấn bắt sự kiện next2() -->
+                <button onclick="next2()" class="selection_tien2"></button>
+            </div>
+        </div>
+
+        <!-- end event -->
+
+        <!-- home_promotion_card -->
+
+        <div class="home_promotion_card">
+            <div class="card">
+                <a href="#">
+                    <img src="images/phototicket---496x247_1.jpg" alt="">
+                </a>
+            </div>
+        </div>
+
+        <!-- end home_promotion_card -->
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="footer_brand_slide">
+                <ul class="brand">
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_cgv_policy">
+                <div class="content_cgv_policy">
+                    <div class="cgv_vietnam">
+                        <h3>CGV Việt Nam</h3>
+                        <a href="#"><p>Giới Thiệu</p></a>
+                        <a href="#"><p>Tiện Ích Online</p></a>
+                        <a href="#"><p>Thẻ Quà Tặng</p></a>
+                        <a href="#"><p>Tuyển Dụng</p></a>
+                        <a href="#"><p>Liên Hệ Quảng Cáo CGV</p></a>
+                    </div>
+                    <div class="cgv_policy">
+                        <h3>Điểu Khoản Sử Dụng</h3>
+                        <a href="#"><p>Điểu Khoản Chung</p></a>
+                        <a href="#"><p>Điểu Khoản Giao Dịch</p></a>
+                        <a href="#"><p>Chính Sách Thanh Toán</p></a>
+                        <a href="#"><p>Chính Sách Bảo Mật</p></a>
+                        <a href="#"><p>Câu Hỏi Thường Gặp</p></a>
+                    </div>
+                    <div class="cgv_follow_us">
+                        <h3>Kết Nối Với Chúng Tôi</h3>
+                        <ul>
+                            <li>
+                                <a class="follow_fb" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="follow_yt" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="follow_line" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="follow_insta" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="follow_zalo" href="#"></a>
+                            </li>
+                        </ul>
+                        <div class="cgv_permision">
+                            <a href="#">
+                                <img src="images/cong-thuong.PNG" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="customer_cgv">
+                        <h3>Chăm Sóc Khách Hàng</h3>
+                        <p>Hotline: 1900 6017</p>
+                        <p>Giờ làm việc: 8:00 - 22:00 (Tất cả các ngày bao gồm cả Lễ Tết)</p>
+                        <p>Email hỗ trợ: hoidap@cgv.vn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_cgv_address">
+                <div class="cgv_address_content">
+                    <div class="logo_footer_cgv"></div>
+                    <div class="text_cgv_address">
+                        <h3>CÔNG TY TNHH CJ CGV VIETNAM</h3>
+                        <P>Giấy CNĐKDN: 0303675393, đăng kí lần đầu ngày 31/7/2008,
+                            đăng kí thay đổi lần thứ 5 ngày 14/10/2015, cấp bởi sở KHDT thành phố Hồ Chí Minh.</P>
+                        <p>Địa chỉ: Tầng 2, Rivera Park Saigon - Số 7/28 Thành Thái, P.14, Q.10, TPHCM.</p>
+                        <p>Hotline: 1900 6017</p>
+                        <p>COPYRIGHT 2017 CJ CGV. All RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- đoạn cuối cùng của footer -->
+            <div class="bottom_footer">
+            </div>
+        </div>
+        <!-- end footer -->
+    </div>
+
+</body>
+</html>
