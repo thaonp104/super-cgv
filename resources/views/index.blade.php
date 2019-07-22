@@ -1,4 +1,3 @@
-
 <html>
 
 <head>
@@ -102,10 +101,10 @@
             </div>
             <div class="mother_slide">
                 <div class="slide">
-                    <ul> 
+                    <ul>
                         @foreach($films as $p)
                             <li class="mySlides">
-                                <span class="movie_rating <?php echo $p->rated;  ?>"></span>  
+                                <span class="movie_rating <?php echo $p->rated;  ?>"></span>
                                 <a href="#">
                                     <img src="{{ $p->image }}">
                                 </a>
@@ -123,289 +122,7 @@
                                 </div>
                             </li>
                         @endforeach
-                        <li class="mySlides">
-                                <span class="movie_rating c16></span>  
-                                <a href="#">
-                                    <img src="{{URL::asset('images/240_14_7.jpg')}}">
-                                </a>
-                                <input type="hidden">
-                                <div class="conect_film_back"></div>
-                                <div class="conect_film">
-                                    <h3>Chúng Ta</h3>
-                                    <a href="#" class="button">Xem chi tiết</a>
-                                    <a class="button btn_booking">
-                                        <i class="fas fa-tty"></i>
-                                        <span>Mua vé</span>
-                                    </a>
-                                </div>
-                                <div class="play_button">
-                                </div>
-                            </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c16"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/240_14_7.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Yêu Nhầm Bạn Thân</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
 
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c13"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/240_10_27.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Đại Úy Marvel</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c18"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/240_14_19.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Mật Vụ Thanh Trừng</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c18"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/240_14_18.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Khách Sạn Mumbai</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating cp"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/240_12_6.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Công Viên Kì Diệu</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c16"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/240_14_16.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Ông Hoàng Đường Đua</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c13"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/final_240.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Bảy Viên Ngọc Rồng</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c18"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/240_12_3.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Hai Phượng</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c16"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/240_10_47.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Chị Trợ Lí Của Anh</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating cp"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/240_14_2.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Hạnh Phúc Của Mẹ</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c13"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/vqdn240.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Vu Quy Đại Náo</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c18"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/240_14_14.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Chúa Quỷ</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c18"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/tof_240.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Zombie Đại Hạ Giá</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-
-                            </div>
-                        </li>
-                        <li class="mySlides">
-                            <span class="movie_rating c13"></span>
-                            <a href="#">
-                                <img src="{{URL::asset('images/240_14_13.jpg')}}">
-                            </a>
-                            <input type="hidden">
-                            <div class="conect_film_back"></div>
-                            <div class="conect_film">
-                                <h3>Đóa Hồng Của Tôi</h3>
-                                <a href="#" class="button">Xem chi tiết</a>
-                                <a class="button btn_booking">
-                                    <i class="fas fa-tty"></i>
-                                    <span>Mua vé</span>
-                                </a>
-                            </div>
-                            <div class="play_button">
-                            </div>
-                        </li>
                     </ul>
                 </div>
                 <button onclick="prev()" class="selection_lui"></button>
@@ -529,7 +246,6 @@
         document.getElementsByClassName("selected")[0].style.background = "#e71a0f";
         document.getElementsByClassName("nonSelected")[0].style.background = "#666";
     };
-
     // Thiết lập click cho button 2
     function myFunction2() {
         document.getElementsByClassName("nonSelected")[0].style.background = "#e71a0f";
@@ -565,7 +281,6 @@
     }
     function prev() {
         var temp = document.querySelectorAll(".movie_selection .slide ul li").length;
-
         if (t >= 0) {
             document.querySelector(".movie_selection .slide ul").style.marginLeft = "-" + (t - 1) * 245 + "px";
         }
@@ -617,7 +332,6 @@
     }
     function prev2() {
         var temp = document.querySelectorAll(".event .slide ul li").length;
-
         if (t >= 0) {
             document.querySelector(".event .slide ul").style.marginLeft = "-" + (t - 1) * 245 + "px";
         }

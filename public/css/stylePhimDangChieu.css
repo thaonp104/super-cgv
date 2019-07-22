@@ -150,6 +150,9 @@
     border: 6px solid black;
     margin-bottom: 5px;
 }
+.phim-dang-chieu .detail .name{
+    text-transform: uppercase;
+}
 .phim-dang-chieu .detail{
     height: 140px;
     padding-bottom: 95px;
