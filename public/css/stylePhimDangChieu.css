@@ -1,0 +1,345 @@
+/* HEADER */
+.banner{
+    width: 980px;
+    margin: auto;
+}
+.banner-img{
+    display: block;
+}
+.banner-img img{
+    display: block;
+}
+.banner-info{
+    text-align: right;
+}
+.banner-info-taskbar{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.banner-info-taskbar li{
+    display: inline-block;
+    padding-top: 5px;
+    margin-right: 15px;
+}
+.banner-info-taskbar li a{
+    color: #666;
+    text-decoration: none;
+}
+
+.menu{
+    background: url("https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/bg-top.png") repeat;
+    background-size: 10px 135px;
+    height: 135px;
+}
+.menu-content{
+    width: 980px;
+    margin: auto;
+}
+.menu-logo{
+    margin-top: 40px;
+}
+.menu-taskbar{
+    padding: 0;
+    margin-top: 76px;
+    margin-right: 80px;
+}
+.menu-taskbar li{
+    display: inline-block;
+}
+.menu-taskbar li a{
+    color: #222;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 25px;
+    font-size: 15px;
+}
+.sub-menu{
+    display: none;
+    padding: 0;
+    position: absolute;
+    border: 2px solid #222;
+    background-color: #2D2D2D;
+}
+.sub-menu li{
+    display: block;
+    padding: 5px 35px 5px 10px;
+    border-left: 2px solid #828281;
+    border-right: 2px solid #828281;
+}
+.sub-menu li:first-child{
+    padding: 10px 35px 5px 10px;
+    border-left: 2px solid #828282;
+    border-top: 2px solid #828282;
+    border-right: 2px solid #828282;
+}
+.sub-menu li:last-child{
+    padding: 5px 35px 10px 10px;
+    border-left: 2px solid #828282;
+    border-bottom: 2px solid #828282;
+    border-right: 2px solid #828282;
+}
+.sub-menu li a{
+    font-size: 15px;
+    color: white;
+    padding: 0; 
+}
+.menu-taskbar li:hover .sub-menu{
+    display: block;
+}
+.menu-taskbar li:hover .sub-menu li:hover a{
+    color: #D91D13;
+}
+
+.menu-search{
+    position: relative;
+    width: 25%;
+    height: 84px;
+}
+.menu-logo, .menu-taskbar, .menu-search{
+    float: left;
+}
+.menu-TinMoiUuDai{
+    position: absolute;
+    top: 45px;
+    left: 9px;
+}
+.menu-search-form{
+    position: absolute;
+    top: 74px;
+    left: 9px;
+}
+.menu-search-form-type{
+    border: 1px solid #B5B5B5;
+    width: 139px;
+    height: 25px;
+    padding: 0 0 0 30px;
+    font-size: 12px;
+}
+.menu-MuaVeNgay{
+    position: absolute;
+    right: 0px;
+    top: 14px;
+}
+/* END OF HEADER */
+
+.main{
+    width: 1044px;
+    height: 100%;
+    margin-left: 184.5px;
+    margin-right: 120.5px;
+}
+.phim-dang-chieu{
+    display: block;
+    padding-left: 0;
+    list-style: none;
+}
+.phim-dang-chieu li{
+    float: left;
+    width: 197px;
+    margin-right: 64px;
+    margin-bottom: 20px;
+}
+.phim-dang-chieu .banner img{
+    width: 185px;
+    height: 260px;
+}
+.phim-dang-chieu .banner{
+    width: 100%;
+    height: 271px;
+    border: 6px solid black;
+    margin-bottom: 5px;
+}
+.phim-dang-chieu .detail{
+    height: 140px;
+    padding-bottom: 95px;
+}
+.btn-like{
+    padding-bottom: 1px;
+    border-radius: 3px;
+    font-size: 15px;
+    height: 20px;
+    padding: 0 0 0 2px;
+    background: #4267b2;
+    border: 1px solid #4267b2;
+    color: #fff;
+    cursor: pointer;
+    font-family: bold,Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+.btn-buy{
+    background: none no-repeat scroll 0 0 #e71a0f;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 6px 2px;
+    border: 0;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: normal;
+    font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
+    line-height: 19px;
+    text-transform: uppercase;
+}
+
+
+
+
+
+/* FOOTER */
+.footer{
+    padding-top: 30px;
+}
+.brand{
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
+    height: 44px;
+}
+.brand ul li a{
+    background-image: url("https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/brand-type-film-footer.png");
+    height: 40px;
+    display: block;
+}
+.brand ul{
+    padding: 0;
+    width: 980px;
+    margin: 0 auto;
+}
+.brand ul li{
+    display: inline-block;
+}
+.brand-4dx{
+    background-position: 0 0;
+    width: 100px;
+}
+.brand-imax{
+    background-position: -710px -2px;
+    width: 93px;
+}
+.brand-starium{
+    background-position: -975px -2px;
+    width: 100px;
+}
+.brand-gold{
+    background-position: -843px -2px;
+    width: 120px;
+}
+.brand-lamour{
+    background-position: -1110px -2px;
+    width: 122px;
+}
+.brand-dolby{
+    background-position: -136px 0;
+    width: 115px;
+}
+.brand-premium{
+    background-position: -1269px -2px;
+    width: 80px;
+}
+.brand-screenx{
+    background-position: -1357px -2px;
+    width: 127px;
+}
+.policy{
+    width: 980px;
+    margin: 0 auto;
+}
+.policy-container{
+    border-bottom: 2px solid #222;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+.policy ul{
+    padding: 0;
+    list-style-type: none; 
+}
+.policy h3{
+    font-size: 15px;
+    font-weight: bold;
+    color: #636363;
+}
+.policy ul a{
+    font-size: 15px;
+    color: #636363;
+    line-height: 22px;
+    text-decoration: none;
+}
+.CGV-VietNam, .dieu-khoan, .ket-noi, .cham-soc{
+    width: 25%;
+    float: left;
+}
+.ket-noi ul{
+    margin: 0;
+}
+.ket-noi ul a{
+    height: 39px;
+    width: 39px;
+    display: block;
+}
+.fb{
+    background: url("https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/bg-social-footer-40.png") -9px -3px;
+}
+.youtube{
+    background: url("https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/bg-social-footer-40.png") -54px -3px;    
+}
+.line{
+    background: url("https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/bg-social-footer-40.png") -145px -3px;    
+}
+.insta{
+    background: url("https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/bg-social-footer-40.png") -98px -3px;    
+}
+.zalo{
+    background: url("https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/bg-social-footer-40.png") -191px -3px;    
+}
+.ket-noi ul li{
+    display: inline-block;
+}
+.ket-noi ul li:hover a{
+    transform: scale(0.9);
+    transition: 0.2s;
+}
+.permit{
+    background: url("https://www.cgv.vn/skin/frontend/cgv/default/images/cong-thuong.PNG") no-repeat;
+    width: 200px;
+    height: 70px;
+    display: block;
+}
+.cham-soc ul li{
+    font-size: 15px;
+    color: #636363;
+    line-height: 22px;
+}
+.address{
+    margin: 0 auto;
+    width: 980px;
+    height: 135px;
+}
+.add-brand, .add-info{
+    float: left;
+}
+.add-brand{
+    background: url("https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/common_sprite_area.png") -145px -319px;
+    width: 120px;
+    height: 43px;
+    margin-top: 30px;
+}
+.add-info{
+    width: 80%;
+}
+.add-info h5{
+    color: #636363;
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.add-info p{
+    color: #636363;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+}
+.bottom-footer{
+    background: url("https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/bg-bottom-footer.jpg") repeat;
+    height: 120px;
+    width: 100%;
+}
+/* END OF FOOTER */ 

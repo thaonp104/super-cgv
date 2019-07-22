@@ -17,11 +17,14 @@ class CreateFilmTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('type');
+            $table->integer('leng');
+            $table->timestamp('release_date')->nullable();
+            
             $table->string('director');
             $table->integer('trang_thai');
             $table->string('image');
-            $table->string('rated');
-            $table->string('des');
+            $table->integer('rated');
+            $table->string('desc');
         });
     }
 

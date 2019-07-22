@@ -12,5 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('phimdangchieu');
 });
+
+Route::get('model/select-all',function(){
+    $data = App\Film::all()->toArray();
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+});
+
+// Route::get('model/select-id',function(){
+//     $data = App\Film::find(24)->toArray();
+//     echo "<pre>";
+//     print_r($data);
+//     echo "</pre>";
+// });
