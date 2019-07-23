@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('model/select-all',function(){
     $data = App\Film::all()->toArray();
     echo "<pre>";
-    print_r($data.sizeof());
+    print_r($data);
     echo "</pre>";
 });
 
