@@ -524,7 +524,7 @@ header .navbar .menu
 }
 /* tieu de phan event */
 .event .font_text{
-    background: url("images/h3_event.gif") no-repeat scroll center center / 142px 39px #FDFCF0;
+    background: url("../images/h3_event.gif") no-repeat scroll center center / 142px 39px #FDFCF0;
     height: 60px;
     width: 155px;
     margin: 0px auto;

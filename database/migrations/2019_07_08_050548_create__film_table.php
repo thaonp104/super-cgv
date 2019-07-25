@@ -23,7 +23,7 @@ class CreateFilmTable extends Migration
             $table->string('director');
             $table->integer('trang_thai');
             $table->string('image');
-            $table->integer('rated');
+            $table->string('rated');
             $table->string('desc');
         });
     }

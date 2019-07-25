@@ -22,9 +22,5 @@ Route::get('model/select-all',function(){
     echo "</pre>";
 });
 
-// Route::get('model/select-id',function(){
-//     $data = App\Film::find(24)->toArray();
-//     echo "<pre>";
-//     print_r($data);
-//     echo "</pre>";
-// });
+Route::get('trangChu','indexController@index');
+//Route::get('thayDoiMatKhau','UserController@thayDoiMatKhau');
