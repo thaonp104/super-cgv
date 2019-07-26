@@ -28,3 +28,10 @@ Route::get('model/select-all',function(){
 //     print_r($data);
 //     echo "</pre>";
 // });
+
+// Route::get('db',function(){
+//     $data = DB::table('ticket','film','schedule')
+//     ->select(DB::raw('ticket.id as idTicket, schedule.film_id as idFilm'))
+//     ->where('ticket.schedule_id','schedule.id');
+//     echo ($data);
+// });

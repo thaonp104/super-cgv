@@ -86,7 +86,7 @@
     </div>
 
    <!-- FOOTER -->
-<!-- <div class="footer">
+<div class="footer">
     <div class="brand">
         <ul>
             <li><a class="brand-4dx" href="#"></a></li>
@@ -153,7 +153,7 @@
         </div>
     </div>
     <div class="bottom-footer"></div>
-</div> -->
+</div>
 <!-- END OF FOOTER -->
 </body>
 </html>
