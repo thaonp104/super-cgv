@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <!-- @include('header') -->
+    @include('header')
     <div class="container-fluit">
         <div class="row1">
             <div class="select">
@@ -104,7 +104,7 @@
                     <ul>
                         @foreach($films as $p)
                             <li class="mySlides">
-                                <span class="movie_rating <?php echo $p->rated;  ?>"></span>
+                                <span class="movie_rating {{$p->rated}}"></span>
                                 <a href="#">
                                     <img src="{{ $p->image }}">
                                 </a>
