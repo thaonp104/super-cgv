@@ -22,21 +22,6 @@ Route::get('model/select-all',function(){
     echo "</pre>";
 });
 
-<<<<<<< HEAD
-// Route::get('model/select-id',function(){
-//     $data = App\Film::find(24)->toArray();
-//     echo "<pre>";
-//     print_r($data);
-//     echo "</pre>";
-// });
-
-// Route::get('db',function(){
-//     $data = DB::table('ticket','film','schedule')
-//     ->select(DB::raw('ticket.id as idTicket, schedule.film_id as idFilm'))
-//     ->where('ticket.schedule_id','schedule.id');
-//     echo ($data);
-// });
-=======
 Route::get('trangChu','indexController@index');
 //Route::get('thayDoiMatKhau','UserController@thayDoiMatKhau');
->>>>>>> f0033c22aa98278d2884772b47d5325e8f767a93
+//>>>>>>> f0033c22aa98278d2884772b47d5325e8f767a93
