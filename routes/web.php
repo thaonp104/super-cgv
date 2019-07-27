@@ -16,5 +16,3 @@ Route::get('/', function () {
 });
 
 Route::get('trangChu','indexController@index');
-//Route::get('thayDoiMatKhau','UserController@thayDoiMatKhau');
-//>>>>>>> f0033c22aa98278d2884772b47d5325e8f767a93
