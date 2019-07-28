@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('phimdangchieu');
-});
+// Route::get('/', function () {
+//     return view('phimdangchieu');
+// });
+Route::get('/','PhimDangChieuController@index');
 
 Route::get('trangChu','indexController@index');
 //Route::get('thayDoiMatKhau','UserController@thayDoiMatKhau');
