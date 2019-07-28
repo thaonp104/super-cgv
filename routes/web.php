@@ -14,6 +14,6 @@
 // Route::get('/', function () {
 //     return view('phimdangchieu');
 // });
-Route::get('/','PhimDangChieuController@index');
+Route::get('/phimdangchieu','PhimDangChieuController@index');
 
-Route::get('trangChu','indexController@index');
+Route::get('/','indexController@index');
