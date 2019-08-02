@@ -1,0 +1,174 @@
+.payment-online{
+    width: 980px;
+}
+.payment-header{
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    line-height: 32px;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+.payment-container{
+    overflow: hidden;
+}
+.col1{
+    width: 70%;
+    margin-right: 2%;
+}
+.col2{
+    width: 28%;
+}
+.step{
+    margin-bottom: 20px;
+}
+.step-header{
+    background: #bcbdc0;
+    border: 2px solid #9d9fa2;
+    margin-bottom: 5px; 
+}
+.header span, .header h5{
+    display: inline-block;
+}
+.header{
+    height: 32px;
+    line-height: 32px;
+    margin-left: 15px;
+}
+.header span{
+    font-size: 14px;
+    font-style: italic;
+}
+.header h5{
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.cgv-point, .discount-code, .voucher, .partner, .promotion-code{
+    background: #fff1ce;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+.step-container{
+    background: #fff1ce;
+}
+.method{
+    height: 32px;
+    line-height: 32px;
+    display: block;
+    margin: 13px 0 5px 15px;
+}
+.method .img{
+    background-size: 100% 100%;
+    margin: 0 7px;
+}
+.atm-img{
+    background: url(https://www.cgv.vn/skin/frontend/cgv/default/images/payment/atm_ic.png) no-repeat;   
+    padding: 4px 19px;
+}
+.international-img{
+    background: url(https://www.cgv.vn/skin/frontend/cgv/default/images/payment/creditcard_ic.png) no-repeat;
+    padding: 12px 19px;
+}
+.momo-img{
+    background: url(https://www.cgv.vn/skin/frontend/cgv/default/images/payment/momo_ic.png) no-repeat;
+    padding: 4px 19px;
+}
+.zalopay-img{
+    background: url(https://www.cgv.vn/skin/frontend/cgv/default/images/payment/zalopay_ic.png) no-repeat;
+    padding: 10px 19px;
+}
+.airpay-img{
+    background: url(https://www.cgv.vn/skin/frontend/cgv/default/images/payment/airpay_ic.png) no-repeat;
+    width: 37px;
+    height: 37px;
+    display: inline-block;
+    vertical-align: middle
+}
+.airpay{
+    padding-bottom: 47px;
+}
+.method:first-child{
+    margin-top: 0;
+}
+.iaccept-name{
+    font-size: 12px;
+}
+.col1, .col2{
+    float: left;
+}
+.table{
+    border: 1px solid #d4d3c9;
+}
+.col2-header, .std, .price{
+    font-weight: bold;
+    text-align: center;
+    background: #fff1ce;
+    height: 35px;
+    line-height: 35px;
+}
+.std{
+    font-weight: normal;
+    border-top: 1px solid #d4d3c9;
+}
+.price{
+    background: #d0cece;
+}
+.total{
+    background: #e71a0f;
+    color: #fff;
+}
+.minute, .second{
+    display: inline-block;
+    background: #fff;
+    margin: 10px 0;
+    height: 91px;
+    width: 75px;
+    padding: 10px;
+    border-radius: 4px;
+}
+.big-num{
+    font-size: 20px;
+    background: #E71A0F;
+    padding: 15px;
+    color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    height: 73%;
+}
+.small-word{
+    opacity: 0.6;
+    font-size: 14px;
+    padding-top: 5px;
+}
+.clock{
+    background: #d0cece;
+    text-align: center;
+}
+.countdown{
+    font-size: 13px;
+}
+.seat-info{
+    display: block;
+}
+#std{
+    font-weight: bold;
+}
+.dot{
+    border-right: 2px dotted #58595b;
+}
+.btn-payment{
+    background: url(https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/bg-cgv-button-process.png) no-repeat;
+    background-position: -134px -110px;
+    display: inline-block;
+    height: 108px;
+    width: 123px;
+}
+.middle{
+    padding-top: 16px;
+    font-size: 12px;
+}
+.prev, .btn-payment{
+    margin-top: 12px;
+}

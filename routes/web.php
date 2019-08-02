@@ -14,6 +14,10 @@
 // Route::get('/', function () {
 //     return view('phimdangchieu');
 // });
+Route::get('/booking','BookingController@index');
+
+Route::get('/payment', 'PaymentController@index');
+
 Route::get('/phimdangchieu','PhimDangChieuController@index');
 
 Route::get('/','indexController@index');
