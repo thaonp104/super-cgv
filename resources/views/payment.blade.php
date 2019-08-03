@@ -101,7 +101,7 @@
         <div class="booking-info">
             <div class="format-bg-top"></div>
             <div class="booking-info-container">
-                <div class="btn-prev prev"></div>
+                <a class="btn-prev prev" href="/booking"></a>
                 <ul class="info">
                     <li class="film-info dot">
                         <div class="middle">

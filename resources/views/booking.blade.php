@@ -243,7 +243,7 @@
                         </div>
                     </li>
                 </ul>
-                <div class="btn-next"></div>
+                <a class="btn-next" href="/payment"></a>
                 <div class="format-bg-bottom"></div>
             </div>
         </div>
