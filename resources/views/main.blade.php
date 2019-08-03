@@ -11,9 +11,8 @@
     
     <script src="{{asset('js/jsBooking.js')}}"></script>
     <script src="{{asset('js/jsPayment.js')}}"></script>
-
-    
 </head>
+
 <body>
    <!-- HEADER -->
    <div class="header">
@@ -40,7 +39,7 @@
             <ul class="menu-taskbar">
                 <li><a href="#">PHIM</a>
                     <ul class="sub-menu">
-                        <li><a href="#">Phim Đang Chiếu</a></li>
+                        <li><a href="/phimdangchieu">Phim Đang Chiếu</a></li>
                         <li><a href="#">Phim Sắp Chiếu</a></li>
                     </ul>
                 </li>

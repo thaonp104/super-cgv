@@ -86,11 +86,11 @@
                     <div class="col2-header countdown">Countdown Clock</div>
                     <div class="clock">
                         <div class="minute">
-                            <div class="big-num">2</div>
+                            <div id="m" class="big-num">5</div>
                             <div class="small-word">Minutes</div>
                         </div>
                         <div class="second">
-                            <div class="big-num">8</div>
+                            <div id="s" class="big-num">0</div>
                             <div class="small-word">Seconds</div>
                         </div>
                     </div>
@@ -150,11 +150,37 @@
             <div class="format-bg-bottom"></div>
         </div>
 
-
-
-
-
-
     </div>
     
+    <script>
+        var m = 5; // Phút
+        var s = 0; // Giây
+    
+        var timeout = null; // Timeout
+
+        start();
+
+        function start()
+        {
+            if (s === -1){
+                m -= 1;
+                s = 59;
+            }
+            if (m === -1){
+                clearTimeout(timeout);
+                alert('Đã quá thời gian đặt');
+                return false;
+            }
+
+            /* HIỂN THỊ ĐỒNG HỒ*/
+            document.getElementById('m').textContent = m.toString();
+            document.getElementById('s').textContent = s.toString();
+        
+            /* GIẢM PHÚT XUỐNG 1 GIÂY VÀ GỌI LẠI SAU 1 GIÂY */
+            timeout = setTimeout(function(){
+                s--;
+                start();
+            }, 1000);
+        }
+    </script>
 @endsection

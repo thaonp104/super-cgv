@@ -133,6 +133,7 @@ body{
 .main{
     width: 1044px;
     height: 100%;
+    padding-top: 30px;
     margin: 30px 120.5px 0 184.5px;
     display: table;
 }

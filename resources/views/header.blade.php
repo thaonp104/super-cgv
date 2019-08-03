@@ -47,7 +47,7 @@
                             <div class="son phim">
                                 <ul>
                                     <li>
-                                        <a href="#">Phim Đang Chiếu <i class="	far fa-hand-point-right"></i></a>
+                                        <a href="/phimdangchieu">Phim Đang Chiếu <i class="	far fa-hand-point-right"></i></a>
 
                                     </li>
                                     <li>

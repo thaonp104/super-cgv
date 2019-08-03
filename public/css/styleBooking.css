@@ -154,6 +154,9 @@
     vertical-align: top;
     height: 128px;
 }
+.film-info{
+    width: 27%;
+}
 .film-info-th{
     vertical-align: top;
 }
@@ -194,3 +197,8 @@
 #seat-info, #seat-detail{
     display: none;
 }
+/* .chosen-seat{
+    background: #b11500;
+    color: #fff;
+    border-color: #b11500;
+} */
