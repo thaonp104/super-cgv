@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Film;
+use DB;
+use View;
 
 class BookingController extends Controller
 {
@@ -11,7 +14,7 @@ class BookingController extends Controller
     // }
     
     public function index(){
-        $data = [];
-        return view('booking', $data);
+        $data = DB::table('film')->where('id',2)->get();
+        return view('booking', ['data' => $data] );
     }
 }

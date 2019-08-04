@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Film;
 use DB;
 use View;
+
 class IndexController extends Controller
 {
     public function index()
