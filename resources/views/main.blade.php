@@ -4,10 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Phim Đang Chiếu</title>
-    <link rel="stylesheet" type="text/css" href="{{asset('css/stylePhimDangChieu.css')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="{{asset('css/styleBooking.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/stylePhimDangChieu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/stylePayment.css')}}">
+    
+    <script src="{{asset('js/jsBooking.js')}}"></script>
+    <script src="{{asset('js/jsPayment.js')}}"></script>
 </head>
+
 <body>
    <!-- HEADER -->
    <div class="header">
@@ -34,7 +39,7 @@
             <ul class="menu-taskbar">
                 <li><a href="#">PHIM</a>
                     <ul class="sub-menu">
-                        <li><a href="#">Phim Đang Chiếu</a></li>
+                        <li><a href="/phimdangchieu">Phim Đang Chiếu</a></li>
                         <li><a href="#">Phim Sắp Chiếu</a></li>
                     </ul>
                 </li>
@@ -82,7 +87,7 @@
 <!-- END OF HEADER -->
 
     <div class="main">
-        @yield('content');
+        @yield('content')
     </div>
 
    <!-- FOOTER -->

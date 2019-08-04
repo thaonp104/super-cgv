@@ -15,9 +15,9 @@ class CreateSeatTable extends Migration
     {
         Schema::create('seat', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('type');
-            $table->string('des');
+            $table->string('desc');
             $table->unsignedBigInteger('room_id');
             $table->foreign('room_id')->references('id')->on('room');
         });

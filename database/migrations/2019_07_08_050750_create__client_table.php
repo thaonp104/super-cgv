@@ -15,11 +15,11 @@ class CreateClientTable extends Migration
     {
         Schema::create('client', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('id_card');
+            $table->integer('id_card')->unique();
             $table->string('name');
             $table->string('phone');
             $table->string('address');
-            $table->string('email');
+            $table->string('email')->unique();
         });
     }
 

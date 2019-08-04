@@ -15,9 +15,9 @@ class CreateRoomTable extends Migration
     {
         Schema::create('room', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->integer('name')->unique();
             $table->integer('total_seat');
-            $table->string('des');
+            $table->string('desc');
             $table->unsignedBigInteger('cinema_id');
             $table->foreign('cinema_id')->references('id')->on('cinema');
         });

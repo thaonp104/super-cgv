@@ -15,7 +15,7 @@ class CreateFilmTable extends Migration
     {
         Schema::create('film', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('type');
             $table->integer('leng');
             $table->timestamp('release_date');
