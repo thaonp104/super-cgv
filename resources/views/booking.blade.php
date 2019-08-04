@@ -1,6 +1,8 @@
 @extends('main')
 
 @section('content')
+
+
     <div class="booking-online">
         <div class="booking-header"><b>BOOKING ONLINE</b></div>
         <div class="seat-header">
@@ -208,12 +210,13 @@
                 <div class="format-bg-top"></div>
                 <div class="btn-prev"></div>
                 <ul class="info">
+                    @foreach( $data as $f )
                     <li class="film-info">
-                        <div class="film-info-th"><img src="https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/dc33889b0f8b5da88052ef70de32f1cb/s/m/smffh-localized_aw-vn-poster_6-3up_triangle_2.jpg" alt=""></div>
+                    <div class="film-info-th"><img src="{{$f -> image}}" alt=""></div>
                         <div class="film-info-td">
-                            <div class="film-name">NGƯỜI NHỆN XA NHÀ</div>
+                        <div class="film-name">{{$f -> name}}</div>
                             <div class="film-format">2D</div>
-                            <div class="film-age-limit">C13</div>
+                            <div class="film-age-limit">{{$f -> rated}}</div>
                         </div>
                     </li>
                     <li class="when-info">
@@ -242,6 +245,7 @@
                             <b><div id="sum-cost">0,00 ₫</div></b>
                         </div>
                     </li>
+                    @endforeach
                 </ul>
                 <a class="btn-next" href="/payment"></a>
                 <div class="format-bg-bottom"></div>
