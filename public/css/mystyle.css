@@ -116,6 +116,7 @@ header .navbar .menu
 }
 .content .menu ul li:hover .son{
     top: 20px;
+    z-index: 20;
 }
 .menu .phim_father{
     position: absolute;
@@ -156,8 +157,11 @@ header .navbar .menu
     /* display: inline-block; */
     padding: 3px;
     position: absolute;
-    top: -1000px
+    top: -1000px;
+    /*top: 20px;*/
+    z-index: 1000;
 }
+
 .menu .son ul{
     padding: 0px;
 }
@@ -171,6 +175,7 @@ header .navbar .menu
     text-align: left;
     border-left: 2px solid #828282;
     border-right: 2px solid #828282;
+    width: 100%;
 }
 .menu .son ul li:first-child{
     padding-top: 10px;

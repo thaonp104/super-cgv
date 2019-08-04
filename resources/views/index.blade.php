@@ -106,13 +106,13 @@
                             <li class="mySlides">
                                 <span class="movie_rating {{$p->rated}}"></span>
                                 <a href="#">
-                                    <img src="{{ $p->image }}">
+                                    <img src="{{URL::asset($p->image)}}">
                                 </a>
                                 <input type="hidden">
                                 <div class="conect_film_back"></div>
                                 <div class="conect_film">
                                     <h3>{{ $p->name }}</h3>
-                                    <a href="#" class="button">Xem chi tiết</a>
+                                    <a href="/detailFilm/{{$p->id}}" class="button">Xem chi tiết</a>
                                     <a class="button btn_booking">
                                         <i class="fas fa-tty"></i>
                                         <span>Mua vé</span>

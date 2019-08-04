@@ -17,3 +17,5 @@
 Route::get('/phimdangchieu','PhimDangChieuController@index');
 
 Route::get('/','indexController@index');
+
+Route::get('/detailFilm/{id}','indexController@detailFilm');
