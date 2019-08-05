@@ -14,10 +14,11 @@ $factory->define(App\Film::class, function (Faker $faker) {
         'like' => 0,
         
         'director' => $faker->name,
-        'trang_thai' => $faker->randomDigit,
+        'trang_thai' => $faker->randomElement(['0','1']),
         'image' => 'images/240_10_27.jpg',
         'rated' => 'c18',
         'desc' => $faker->text,
         
     ];
 });
+

@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Phim Đang Chiếu</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/mystyle.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/styleBooking.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylePhimDangChieu.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylePayment.css')}}">
@@ -12,7 +16,6 @@
     <script src="{{asset('js/jsBooking.js')}}"></script>
     <script src="{{asset('js/jsPayment.js')}}"></script>
 </head>
-
 <body>
    <!-- HEADER -->
    <div class="header">

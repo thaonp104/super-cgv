@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Seeder;
 
 class CinemaSeeder extends Seeder
@@ -14,3 +13,5 @@ class CinemaSeeder extends Seeder
         factory(App\Cinema::class, 10)->create();
     }
 }
+
+
