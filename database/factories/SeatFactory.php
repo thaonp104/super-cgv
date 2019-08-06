@@ -10,5 +10,6 @@ $factory->define(App\Seat::class, function (Faker $faker) {
         'name'=>$faker->unique()->word,
         'type'=>$faker->word,
         'desc'=>$faker->word,
+        'room_id'=>factory(App\Room::class)->create()->id,
     ];
 });

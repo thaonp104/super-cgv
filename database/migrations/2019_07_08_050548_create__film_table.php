@@ -21,7 +21,7 @@ class CreateFilmTable extends Migration
             $table->timestamp('release_date');
             $table->integer('like');
             $table->string('director');
-            $table->integer('trang_thai');
+            $table->enum('trang_thai',['0','1']);
             $table->string('image');
             $table->string('rated');
             $table->string('desc');

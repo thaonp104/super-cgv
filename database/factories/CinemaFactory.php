@@ -9,7 +9,10 @@ $factory->define(App\Cinema::class, function (Faker $faker) {
     return [
         'name' => $faker->unique()->word,
         'address' => $faker->unique()->address,
-        'desc' => $faker->word,
+//        'desc' => $faker->text,
+        'desc' => $faker->text,
         'hotline' => $faker->e164PhoneNumber,
+
+
     ];
 });
