@@ -8,7 +8,7 @@ class Client extends Model
 {
     protected $table = 'client';
 
-    protected $filltable = ['id_card','name','phone','address','email'];
+    protected $fillable = ['id_card','name','phone','address','email'];
 
     public $timestamps = false;
 }

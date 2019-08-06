@@ -8,7 +8,7 @@ class Cinema extends Model
 {
     protected $table = 'cinema';
 
-    protected $filltable = ['name','adddress','desc','hotline'];
+    protected $fillable = ['name','adddress','desc','hotline'];
 
     public $timestamps = false;
 }

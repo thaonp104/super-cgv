@@ -64,13 +64,6 @@
     color: #fff;
     background-color: #FF62B0;
 }
-
-
-
-
-
-
-
 .seat-notice{
     text-align: center;
 }
@@ -167,6 +160,13 @@
 .film-info-th, .film-info-td{
     display: inline-block;
 }
+.film-name{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.when-info{
+    width: 36%;
+}
 .when-info-th, .when-info-td{
     display: inline-block;
     vertical-align: top;
@@ -192,7 +192,7 @@
     width: 104px;
 }
 .when-info-td{
-    width: 156px;
+    width: 55%;
 }
 #seat-info, #seat-detail{
     display: none;

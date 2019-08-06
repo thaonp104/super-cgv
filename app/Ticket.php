@@ -8,7 +8,7 @@ class Ticket extends Model
 {
     protected $table = 'ticket';
 
-    protected $filltable = ['price','seat_id','schedule_id','bill_id'];
+    protected $fillable = ['price','seat_id','schedule_id','bill_id'];
 
     public $timestamps = false;
 }

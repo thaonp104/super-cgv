@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <div class="booking-online">
         <div class="booking-header"><b>BOOKING ONLINE</b></div>
         <div class="seat-header">
