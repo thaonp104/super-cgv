@@ -325,3 +325,7 @@ h6{
 .prev, .btn-payment{
     margin-top: 12px;
 }
+.red{
+    color: #ff0000;
+    font-weight: bold;
+}

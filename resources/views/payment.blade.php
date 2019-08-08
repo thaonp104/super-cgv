@@ -239,7 +239,7 @@
                             <div class="cost-info-th">
                                 <div class="film">Phim</div>
                                 <div class="combo">Combo</div>
-                                <div class="sum">Tổng</div>
+                                <div class="sum red">Tổng</div>
                             </div>
                             <div class="cost-info-td">
                                 <b><div id="film-cost">120.000,00 ₫</div></b>
