@@ -10,7 +10,7 @@ $factory->define(App\Schedule::class, function (Faker $faker) {
         'start_time'=>$faker->time,
         'end_time'=>$faker->time,
         'date'=>$faker->date,
-        'room_id'=>factory(App\Room::class)->create()->id,
-        'film_id'=>factory(App\Film::class)->create()->id,
+        'room_id'=>$faker->numberBetween($min = 1, $max = 3),
+        'film_id'=>$faker->numberBetween($min = 1, $max = 10),
     ];
 });
