@@ -1,0 +1,124 @@
+/*Login*/
+.content .content_width{
+    padding-left: 0px;
+    width: 541px;
+}
+ul li .login{
+    background-color: #e71a0f;
+}
+ul li .register{
+    background-color: #898987;
+}
+
+.content .content_login{
+    padding: 35px 0 70px 80px;
+}
+.content .content_login .note{
+    color: #a0a0a0;
+    font-style: italic;
+    font-size: 13px;
+    margin-top: 40px;
+    margin-bottom: 7px;
+}
+.content_login .form_login{
+    margin: 10px 0 20px 0;
+    width: 264px;
+    float: left;
+}
+.form_login input{
+    font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
+    color: #222;
+    font-size: 14px;
+    line-height: 18px;
+    border: 2px solid #b5b5b5;
+    color: #666;
+    display: block;
+    font-size: 12px;
+    height: 35px;
+    line-height: 33px;
+    padding: 0 5px 0 40px;
+    width: 240px;
+}
+.form_login .input-box{
+    margin-bottom: 15px;
+}
+.form_login .input_email{
+    background: url("../images/sprite_icon.png") no-repeat scroll 12px -232px rgba(0, 0, 0, 0);
+}
+.form_login .input_pw{
+    background: url("../images/sprite_icon.png") no-repeat scroll 12px -261px rgba(0, 0, 0, 0);
+}
+.form_login .fill{
+    margin: 5px 0 0;
+    color: #df280a;
+    font-size: 13px;
+
+}
+#advice-required-entry-email, #advice-required-entry-pass, #advice-required-password-pass{
+    /*display: block;*/
+    display: none;
+}
+.form_login label{
+    width: 115px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.form_login label p{
+    color: red;
+}
+
+.captcha-image{
+    width: 258px;
+    position: relative;
+}
+.captcha-image .captcha-img{
+    border: 1px solid #b6b6b6;
+    vertical-align: bottom;
+    width: 100%;
+}
+.captcha-reload {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+
+.login-forgot-pass {
+    background: url("../images/bg_arrow03.png") no-repeat scroll right 6px rgba(0, 0, 0, 0);
+    color: #666;
+    /*float: left;*/
+    font-size: 11px;
+    padding-right: 10px;
+}
+
+.from-login-account .login-button-submit {
+    float: right;
+    clear: none;
+    float: right;
+    margin-left: 3px;
+    padding-top: 0;
+    margin-top: 10px;
+}
+.login-button-submit button {
+    background: none repeat scroll 0 0 #e71a0f;
+    display: block;
+    height: 85px;
+    min-width: 90px !important;
+    padding: 2px;
+    text-align: center;
+    border: none;
+}
+.login-button-submit button > span {
+    border: 1px solid #f07469;
+    color: #f2f0e5;
+    display: inline-block;
+    height: 80px;
+    line-height: 60px;
+    min-width: 86px;
+    padding: 5px 10px;
+}
+.login-button-submit button > span span {
+    color: #fff;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+

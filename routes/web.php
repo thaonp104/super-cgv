@@ -20,3 +20,7 @@ Route::get('/phimdangchieu','PhimDangChieuController@index');
 Route::get('/','indexController@index');
 
 Route::get('/detailFilm/{id}','indexController@detailFilm');
+
+Route::get('/login','indexController@login');
+
+Route::get('/create','indexController@create');

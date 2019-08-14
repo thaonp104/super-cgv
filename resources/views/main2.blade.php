@@ -12,6 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/mystyle.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/detailFilm.css')}}">
+    @yield('css')
 <!-- {{URL::asset('')}} -->
 </head>
 <body>

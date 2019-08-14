@@ -26,4 +26,11 @@ class IndexController extends Controller
         return View::make('detailFilm', $data);
     }
 
+    public function login(){
+        return View::make('login');
+    }
+
+    public function create(){
+        return View::make('create');
+    }
 }

@@ -1,0 +1,12 @@
+/*Create*/
+
+.content .content_width{
+    padding-left: 0px;
+    width: 980px;
+}
+ul li .login{
+    background-color: #898987;
+}
+ul li .register{
+    background-color: #e71a0f;
+}
