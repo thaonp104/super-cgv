@@ -11,6 +11,18 @@ class SeatSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Seat::class, 10)->create();
+        $faker = Faker\Factory::create();
+
+        for( $i = 1 ; $i <= 9 ; $i++ ){
+            for( $j = 1 ; $j <= 129 ; $j++ ){
+                App\Seat::create([
+                    'name'=>$faker->unique()->hexcolor,
+                    'type'=>$faker->word,
+                    'desc'=>$faker->word,
+                    'room_id' => $i,
+                ]);
+            }
+        }
+ //       factory(App\Seat::class, 2200)->create();
     }
 }

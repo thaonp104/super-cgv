@@ -50,6 +50,143 @@
     margin-bottom: 5px;
     padding: 10px;
 }
+.diem-cgv, .the-qua-tang{
+    display: inline-block;
+    width: 49%;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+h6, .dang-ky{
+    display: inline-block;
+}
+.under-cgv-point input[type=text]{
+    width: 110px;
+    height: 30px;
+    text-align: center;
+    border: 2px solid #b5b5b5;
+}
+.su-dung, .dang-ky{
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    background: #e71a0f;
+    border: 0;
+    color: #FFFFFF;
+    line-height: 19px;
+    text-align: center;
+}
+.under-cgv-point input[type=text], .under-cgv-point .su-dung, .under-cgv-point input[type=checkbox]{
+    display: inline-block;
+}
+.under-cgv-point .header{
+    margin: 10px 0 0 0;
+    height: 40px;
+}
+h6{
+    font-size: 13px;
+    font-weight: bold;
+}
+.dang-ky{
+    float: right;
+}
+.op-col{
+    padding: 0 2% !important;
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    height: 168px;
+}
+.op-col .header{
+    margin: 10px 0 0;
+    height: 40px;
+}
+.chua-dung, .expire-date{
+    display: inline-block;
+    font-size: 12px;
+}
+.chua-dung{
+    width: 60%;
+}
+.expire-date{
+    width: 34%;
+    vertical-align: top;
+}
+.expire-date input[type=checkbox]{
+    margin-left: 5px;
+}
+.op3{
+    height: 50px;
+}
+.doi-tac, .uu-dai{
+    display: inline-block;
+}
+.doi-tac{
+    width: 30%;
+    vertical-align: top;
+}
+.uu-dai{
+    width: 69%;
+    padding: 0 2% !important;
+    margin: 20px 0;
+    border-left: 1px solid #ededed;
+    font-size: 13px;
+}
+.doi-tac .name{
+    background-position: 160px 0px;
+    color: #ca252c;
+    background: url(https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cgv/bg-icon-partner-cgv.png) no-repeat right top;
+    font-weight: bold;
+    margin: 29px 14px;
+}
+.uu-dai .tieu-de{
+    min-height: 40px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.uu-dai form{
+    margin: 0;
+}
+.vpbank-code{
+    width: 365px;
+    max-width: 100%;
+}
+.uu-dai .su-dung{
+    width: 76px;
+    font-size: 12px;
+}
+.uu-dai p{
+    margin: 0;
+    font-size: 14px;
+}
+.uu-dai a{
+    color: #e71a0f;
+    text-decoration: none;
+}
+.under-promotion-code form{
+    padding-left: 20%;
+    margin-bottom: 30px;
+}
+.under-promotion-code b{
+    font-size: 13px;
+}
+.under-promotion-code input[type=text]{
+    width: 365px;
+    height: 30px;
+    margin-top: 10px;
+}
+.under-promotion-code .su-dung{
+    width: 76px;
+    display: inline-block;
+}
+.under-cgv-point .giamgia{
+    text-align: right;
+    border-top: 1px dashed #c3bda5;
+    margin: 15px 0;
+    padding-top: 10px;
+}
+.under-cgv-point, .under_discount-code, .under-voucher, .under-partner, .under-promotion-code{
+    display: none;
+}
 .step-container{
     background: #fff1ce;
 }
@@ -91,6 +228,22 @@
 }
 .method:first-child{
     margin-top: 0;
+}
+.extra{
+    background: #fff1ce;
+    display: none;
+}
+.extra-left, .extra-right{
+    display: inline-block;
+    width: 49%;
+    padding: 10px;
+}
+.extra-left{
+    text-align: left;
+}
+.extra-right{
+    text-align: center;
+    vertical-align: top;
 }
 .iaccept-name{
     font-size: 12px;
@@ -171,4 +324,8 @@
 }
 .prev, .btn-payment{
     margin-top: 12px;
+}
+.red{
+    color: #ff0000;
+    font-weight: bold;
 }

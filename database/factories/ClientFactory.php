@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Client::class, function (Faker $faker) {
     return [
-        'id_card'=>$faker->unique()->numberBetween($min = 1, $max = 10),
+        'id_card'=>$faker->unique()->numberBetween($min = 10000, $max = 99999),
         'name'=>$faker->name,
         'phone'=>$faker->e164PhoneNumber,
         'address'=>$faker->address,

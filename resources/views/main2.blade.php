@@ -31,7 +31,7 @@
                             <button onclick="myFunction2()" class="nonSelected en">EN</button>
                         </li>
                     </ul>
-                </span>
+            </span>
 
         </div>
     </div>
