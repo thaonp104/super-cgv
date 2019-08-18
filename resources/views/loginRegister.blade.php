@@ -9,14 +9,18 @@
     <div class="content_width">
         <ul class="select">
             <li>
-                <button type="button" class="login">
-                    <strong>ĐĂNG NHẬP</strong>
-                </button>
+                <a href="/login">
+                    <button type="button" class="login">
+                        <strong>ĐĂNG NHẬP</strong>
+                    </button>
+                </a>
             </li>
             <li>
-                <button type="button" class="register">
-                    <strong>ĐĂNG KÝ</strong>
-                </button>
+                <a href="/create">
+                    <button type="button" class="register">
+                        <strong>ĐĂNG KÝ</strong>
+                    </button>
+                </a>
             </li>
         </ul>
         @yield('form')

@@ -14,7 +14,13 @@ class BookingController extends Controller
     // }
     
     public function index(){
+        $session = session('login');
+        if($session != 'ok'){
+            return redirect('/login');
+        }
         $data = DB::table('film')->where('id',2)->get();
         return view('booking', ['data' => $data] );
+
+
     }
 }

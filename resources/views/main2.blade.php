@@ -21,7 +21,7 @@
         <div class="menu">
             <a href="#" class="styleA">TUYỂN DỤNG</a>
             <a href="#" class="styleA">LIÊN HỆ CGV</a>
-            <a href="#" class="styleA">ĐĂNG NHẬP/ ĐĂNG KÝ</a>
+            <a href="/login" class="styleA">ĐĂNG NHẬP/ ĐĂNG KÝ</a>
             <span>
                     <ul class="language">
                         <li>

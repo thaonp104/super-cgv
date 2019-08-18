@@ -11,4 +11,6 @@ class Film extends Model
     protected $fillable = ['name','type','leng','release_date','director','trang_thai','image','rated','des'];
 
     public $timestamps = false;
+
+
 }
