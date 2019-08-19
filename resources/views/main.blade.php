@@ -12,7 +12,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylePhimDangChieu.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylePayment.css')}}">
     
-    @yield('js')
+    <script src="{{asset('js/jsBooking.js')}}"></script>
+    <script src="{{asset('js/jsPayment.js')}}"></script>
+    
 </head>
 <body>
    <!-- HEADER -->
@@ -33,7 +35,7 @@
     <div class="menu">
         <div class="menu-content">
             <div class="menu-logo">
-                <a href="#">
+                <a href="/">
                     <img src="https://www.cgv.vn/skin/frontend/cgv/default/images/cgvlogo.png" alt="">
                 </a>
             </div>

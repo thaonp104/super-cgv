@@ -1,9 +1,5 @@
 @extends('main')
 
-@section('js')
-    <script src="{{asset('js/jsBooking.js')}}"></script>
-@endsection
-
 @section('content')
 
     <div class="booking-online">

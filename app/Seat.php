@@ -11,4 +11,14 @@ class Seat extends Model
     protected $fillable = ['name','type','desc','room_id'];
 
     public $timestamps = false;
+
+    public function room()
+    {
+        return $this->belongsTo('App\Room');
+    }
+
+    public function ticket()
+    {
+        return $this->hasMany('App\Ticket');
+    }
 }

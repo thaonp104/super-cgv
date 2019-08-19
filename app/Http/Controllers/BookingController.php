@@ -14,7 +14,8 @@ class BookingController extends Controller
     // }
     
     public function index(){
-        $data = DB::table('film')->where('id',2)->get();
+        $data = Film::where('id',1)->get();
         return view('booking', ['data' => $data] );
     }
+
 }

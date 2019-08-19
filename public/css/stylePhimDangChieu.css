@@ -187,36 +187,32 @@ body{
     text-transform: uppercase;
 }
 .phim-dang-chieu .detail{
-    height: 140px;
+    height: 111px;
     padding-bottom: 95px;
 }
-.btn-like{
-    padding-bottom: 1px;
-    border-radius: 3px;
-    font-size: 15px;
-    height: 20px;
-    padding: 0 0 0 2px;
-    background: #4267b2;
-    border: 1px solid #4267b2;
-    color: #fff;
-    cursor: pointer;
-    font-family: bold,Helvetica, Arial, sans-serif;
-    margin: 0;
+.fb-like{
+    float: left;
+    margin-top: 6px;
 }
-.div-btn-buy{
-    background-color: #e71a0f;
-    
-}
-.btn-buy{
-    background: none no-repeat scroll 0 0 #e71a0f;
+.fa-mua-ve{
+    background: #e71a0f;
+    width: 93px;
+    height: 31px;
+    padding: 2px 1px;
     border-radius: 5px;
-    display: inline-block;
-    padding: 6px 2px;
-    border: 1px solid #fff;
-    color: #FFFFFF;
+    float: right;
+}
+.mua-ve{
+    color: white;
+    height: 28px;
+    border: 1px solid #f07469;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 25px;
+    font-weight: bold;
     font-size: 13px;
-    font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
-    text-transform: uppercase;
+    line-height: 15px;
+    background: url(../images/bg-cate-booking.png) no-repeat scroll left center rgba(0, 0, 0, 0);
 }
 
 
