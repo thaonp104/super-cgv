@@ -1,5 +1,10 @@
+<?php
+// Start the session
+session_start();
+?>
 @extends('main2')
 @section('content')
+
     <div class="container-fluit">
         <div class="row1">
             <div class="select">

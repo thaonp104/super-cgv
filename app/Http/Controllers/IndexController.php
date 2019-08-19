@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Film;
 use App\Cinema;
+use App\Client;
 use DB;
 use View;
-
+use Illuminate\Support\Facades\Hash;
 class IndexController extends Controller
 {
     public function index()
@@ -23,48 +25,6 @@ class IndexController extends Controller
     }
 
     public function detailFilm($id){
-        // $data['film'] = Film::where('id',$id)->first();
-
-        // // Các phòng chiếu phim đã chọn
-        // $room = App\Film::find($id)->room()->get()->toArray();
-        
-        // // Thời gian chiếu phim đã chọn
-        // $time = [];
-        // $j = 0;
-        // foreach ($room as $each_room) {
-        //     $time[$j++] = App\Film::find($each_room['id'])->schedule()->get()->toArray();
-        // }
-
-        // // Các rạp chiếu phim đã chọn
-        // $cinema = [];
-        // $i = 0;
-        // foreach ($room as $each_room) {
-        //     $cinema[$i++] = App\Room::find($each_room['id'])->cinema()->get()->toArray();
-        // }
-
-
-        // return View::make('detailFilm', $data);
-
-        // $listFilm = [];
-       
-        // $data1 = Film::find($id)->schedule()->get();
-        // foreach ($data1 as $i) {
-        //     $listRoom = [];
-        //     $rooms = $i->room()->get();
-        //     foreach ($rooms as $j) {
-        //         array_push($listRoom, $j);
-        //         $listCinema = [];
-        //         $cinemas = $j->cinema()->get();
-        //         foreach ($cinemas as $x) {
-        //             array_push($listCinema, $x);
-        //         }
-        //         $j['cinemas'] = $listCinema;
-        //         array_push($listRoom, $j);
-        //     }
-        //     $i['rooms'] = $listRoom;
-        //     array_push($listFilm, $i);
-        // }
-
         $listCinema = [];
         $cinema = Cinema::all();
         foreach( $cinema as $cinemai ){
@@ -86,34 +46,53 @@ class IndexController extends Controller
             if( sizeof($listRoom) > 0 ) array_push($listCinema,$cinemai);
         }
         // dd($listCinema) ;
-        
         return view('detailFilm')->with('listCinema',$listCinema);
     }
 
+    public function login(){
+        return View::make('login');
+    }
 
-    public function cinema($id)
-    {
-        // $listFilm = [];
-       
-        // $data1 = Film::find(1)->schedule()->get();
-        // foreach ($data1 as $i) {
-        //     $listRoom = [];
-        //     $rooms = $i->room()->get();
-        //     foreach ($rooms as $j) {
-        //         array_push($listRoom, $j);
-        //         $listCinema = [];
-        //         $cinemas = $j->cinema()->get();
-        //         foreach ($cinemas as $x) {
-        //             array_push($listCinema, $x);
-        //         }
-        //         $j['cinemas'] = $listCinema;
-        //         array_push($listRoom, $j);
-        //     }
-        //     $i['rooms'] = $listRoom;
-        //     array_push($listFilm, $i);
-        // }
-        
-        // dd($listFilm);
-        // return view('detailFilm')->with('listFilm',$listFilm);
+    public function create(){
+        $data['cinemas']= Cinema::all();
+        return View::make('create',$data);
+    }
+
+    public function saveAccount(){
+        if($_POST['password'] == $_POST['re-password'] && $_POST['re-text']== 'Y35NVL'){
+            DB::table('client')->insert(
+                [
+                    'name' => $_POST['first'].$_POST['last-name'],
+                    'phone' => $_POST['phone'],
+                    'email' => $_POST['email'],
+                    'password' => bcrypt($_POST['password']),
+                    'address' => $_POST['address'],
+                ]
+            );
+            return redirect(url('/login'));
+        }
+        else return redirect(url('/create'));
+    }
+    public function login_result(Request $request){
+        if($_POST['re-text']!= 'Y35NVL'){
+            return redirect(url('/login'));
+        }
+        else{
+            $clients = Client::all();
+            foreach ($clients as $client){
+                if(Hash::check($_POST['password'],$client->password)){
+                    if($client->email == $_POST['email']){
+                        session_start();
+//                        $request->session()->put('login', '1');
+                        session(['login' => 'ok']);
+                        return redirect(url('/phimdangchieu'));
+//                        $value = $request->session()->get('logout');
+                        break;
+                    }
+                }
+            }
+            return redirect(url('/login'));
+        }
+
     }
 }

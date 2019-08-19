@@ -51,3 +51,11 @@ Route::get('/cinema', function () {
     print_r($cinema);
     echo "</pre>";
 });
+
+Route::get('/login','indexController@login');
+
+Route::get('/create','indexController@create');
+
+Route::post('/saveAccount','indexController@saveAccount');
+
+Route::post('/login_result','indexController@login_result');

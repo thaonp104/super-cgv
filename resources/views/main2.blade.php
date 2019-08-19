@@ -12,6 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/mystyle.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/detailFilm.css')}}">
+    @yield('css')
 <!-- {{URL::asset('')}} -->
 </head>
 <body>
@@ -20,7 +21,7 @@
         <div class="menu">
             <a href="#" class="styleA">TUYỂN DỤNG</a>
             <a href="#" class="styleA">LIÊN HỆ CGV</a>
-            <a href="#" class="styleA">ĐĂNG NHẬP/ ĐĂNG KÝ</a>
+            <a href="/login" class="styleA">ĐĂNG NHẬP/ ĐĂNG KÝ</a>
             <span>
                     <ul class="language">
                         <li>
