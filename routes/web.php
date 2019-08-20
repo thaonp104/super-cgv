@@ -24,6 +24,8 @@ Route::get('/detailFilm/{id}','indexController@detailFilm');
 
 Route::get('/login','indexController@login');
 
+Route::get('/logout','AuthController@logout');
+
 Route::get('/create','indexController@create');
 
 Route::post('/saveAccount','indexController@saveAccount');

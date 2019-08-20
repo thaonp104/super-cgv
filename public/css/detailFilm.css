@@ -304,36 +304,36 @@ product-view .product-shop, .product-view .add-to-cart-wrapper, .product-view .b
 }
 
 
-.banner-bottom {
-    width: 980px;
-    margin: 0 auto;
-}
-.sticky-banner {
-    display: none;
-    position: fixed;
-    left: 0;
-    bottom: -4px;
-    text-align: center;
-    width: 100%;
-    z-index: 99998;
-}
-.banner-click {
-    float: left;
-    width: 100%;
-    text-align: center;
-    padding-left: 1%;
-}
-.close-bottom-banner {
-    position: relative;
-    bottom: 60px;
-    right: 18px;
-    background: #f5f5f5;
-    padding: 8px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    z-index: 99999;
-    float: none!important;
-}
+/*.banner-bottom {*/
+/*    width: 980px;*/
+/*    margin: 0 auto;*/
+/*}*/
+/*.sticky-banner {*/
+/*    display: none;*/
+/*    position: fixed;*/
+/*    left: 0;*/
+/*    bottom: -4px;*/
+/*    text-align: center;*/
+/*    width: 100%;*/
+/*    z-index: 99998;*/
+/*}*/
+/*.banner-click {*/
+/*    float: left;*/
+/*    width: 100%;*/
+/*    text-align: center;*/
+/*    padding-left: 1%;*/
+/*}*/
+/*.close-bottom-banner {*/
+/*    position: relative;*/
+/*    bottom: 60px;*/
+/*    right: 18px;*/
+/*    background: #f5f5f5;*/
+/*    padding: 8px 12px;*/
+/*    border-radius: 20px;*/
+/*    cursor: pointer;*/
+/*    z-index: 99999;*/
+/*    float: none!important;*/
+/*}*/
 /*End mainDetail*/
 
 
