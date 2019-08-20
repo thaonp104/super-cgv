@@ -2,11 +2,8 @@
 
 @section('content')
 
-<!-- <?php 
-  //  $data = App\Film::all()->toArray();
-  //  $data = DB::table('film') -> get();
-
-?> -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
 
     <div class="header-phim-dang-chieu">
         <div><h1>Phim Đang Chiếu</h1></div>
@@ -25,16 +22,23 @@
                     <div class="release-date"><b>Khởi chiếu: </b>{{$f -> release_date}}</div>
                 </div>
                 <div class="button">
-                    &emsp;&emsp;<span class="btn-like" onclick="like()">Like {{$f -> like}}</span>&emsp;&emsp;&emsp;
-                    <span class="div-btn-buy"><div class="btn-buy" onclick="buy()">Mua vé</span></span>
+                    <div class="fb-like" 
+                        data-href="https://cgv.vn" 
+                        data-width="" 
+                        data-layout="button_count" 
+                        data-action="like" 
+                        data-size="small" 
+                        data-show-faces="false" 
+                        data-share="false">
+                    </div>
+                    <div class="fa-mua-ve">
+                        <div class="mua-ve">
+                            MUA VÉ
+                        </div>
+                    </div>
                 </div>
             </li>
         @endforeach
     </ul>
-    
-    <script>
-        
-    </script>
-
 @endsection
    

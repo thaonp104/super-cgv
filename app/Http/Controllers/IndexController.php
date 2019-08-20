@@ -21,9 +21,28 @@ class IndexController extends Controller
     }
 
     public function detailFilm($id){
-        $data['film'] = Film::where('id',$id)->first();
-//        $film->save();
-        return View::make('detailFilm', $data);
+        $listCinema = [];
+        $cinema = Cinema::all();
+        foreach( $cinema as $cinemai ){
+            $listRoom = [];
+            $roomi = $cinemai->room()->get();
+            foreach( $roomi as $roomj ){
+                $listSchedule = [];
+                $schedulej = $roomj->schedule()->get();
+                foreach( $schedulej as $schedulet ){
+                    if( $schedulet->film_id == $id ){
+                        $schedulet['film'] = $schedulet->film()->get();
+                        array_push($listSchedule,$schedulet);
+                    }
+                }
+                $roomj['schedules'] = $listSchedule;
+                if( sizeof($listSchedule) > 0 ) array_push($listRoom,$roomj);
+            }
+            $cinemai['rooms'] = $listRoom;
+            if( sizeof($listRoom) > 0 ) array_push($listCinema,$cinemai);
+        }
+        // dd($listCinema) ;
+        return view('detailFilm')->with('listCinema',$listCinema);
     }
 
     public function login(){

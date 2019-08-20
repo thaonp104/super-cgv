@@ -1,10 +1,5 @@
 @extends('main')
 
-
-@section('js')
-    
-<script src="{{asset('js/jsPayment.js')}}"></script>
-@endsection
 @section('content')
     <div class="payment-online">
         <div class="payment-header"><b>THANH TOÁN</b></div>

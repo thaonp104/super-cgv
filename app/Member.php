@@ -10,6 +10,11 @@ class Member extends Model{
     protected $fillable = ['username','password','fullname','role'];
 
     public $timestamps = false;
+
+    public function bill()
+    {
+        return $this->hasMany('App\Bill');
+    }
 }
 
 

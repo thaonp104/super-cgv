@@ -13,4 +13,9 @@ class Client extends Authenticatable
     protected $fillable = ['id_card','name','phone','address','email'];
 
     public $timestamps = false;
+
+    public function bill()
+    {
+        return $this->hasMany('App\Bill');
+    }
 }

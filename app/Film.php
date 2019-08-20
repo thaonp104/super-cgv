@@ -12,5 +12,17 @@ class Film extends Model
 
     public $timestamps = false;
 
+    public function schedule()
+    {
+        return $this->hasMany('App\Schedule');
+    }
 
+    public function room()
+    {
+        return $this->belongsToMany('App\Room', 'schedule');
+    }
+
+    public function getCinemaName($idFilm){
+        
+    }
 }

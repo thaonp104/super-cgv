@@ -8,7 +8,7 @@
                     <span>/ </span>
                 </li>
                 <li class="product">
-                    <strong>{{$film->name}}</strong>
+                    <strong>{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->name }}</strong>
                 </li>
             </ul>
         </div>
@@ -19,15 +19,15 @@
                         <span class="h1">Nội Dung Phim</span>
                     </div>
                     <div class="product-img">
-                        <img src="{{URL::asset($film->image)}}" alt="{{$film->name}}">
+                        <img src="{{URL::asset($listCinema[0]->rooms[0]->schedules[0]->film[0]->image)}}" alt="aa">
                     </div>
                     <div class="product-shop">
                         <div class="product-name">
-                            <span class="h1"> {{$film->name}}</span>
+                            <span class="h1">{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->name }}</span>
                         </div>
                         <div class="movie-director movie-infor">
                             <label>Đạo diễn: </label>
-                            <span class="std">&nbsp; {{$film->director}}</span>
+                            <span class="std">&nbsp;{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->director }}</span>
                         </div>
                         <div class="movie-actress movie-infor">
                             <label>Diễn viên: </label>
@@ -35,26 +35,26 @@
                         </div>
                         <div class="movie-genre movie-infor">
                             <label>Thể loại:</label>
-                            <div class="std">&nbsp;&nbsp; {{$film->type}}</div>
+                            <div class="std">&nbsp;&nbsp;{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->type }}</div>
                         </div>
                         <div class="movie-release movie-infor">
                             <label>Khởi chiếu:</label>
-                            <div class="std">&nbsp; {{$film->release_date}}</div>
+                            <div class="std">&nbsp;{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->release_date }}</div>
                         </div>
                         <div class="movie-actress movie-infor">
                             <label>Thời lượng:</label>
-                            <div class="std">&nbsp; {{$film->leng}}</div>
+                            <div class="std">&nbsp;{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->leng }} phút</div>
                         </div>
                         <div class="movie-rating movie-rated-web">
                             <label>Rated:</label>
                             <div class="std">&nbsp;&nbsp;
-                                @if($film->rated == 'p')
+                                @if($listCinema[0]->rooms[0]->schedules[0]->film[0]->rated == 'p')
                                     <strong>P - PHIM DÀNH CHO MỌI ĐỐI TƯỢNG</strong>
-                                @elseif($film->rated == 'c13')
+                                @elseif($listCinema[0]->rooms[0]->schedules[0]->film[0]->rated == 'c13')
                                     <strong>C13 - PHIM CẤM KHÁN GIẢ DƯỚI 13 TUỔI</strong>
-                                @elseif($film->rated == 'c16')
+                                @elseif($listCinema[0]->rooms[0]->schedules[0]->film[0]->rated == 'c16')
                                     <strong>C16 - PHIM CẤM KHÁN GIẢ DƯỚI 16 TUỔI</strong>
-                                @elseif($film->rated == 'c18')
+                                @elseif($listCinema[0]->rooms[0]->schedules[0]->film[0]->rated == 'c18')
                                     <strong>C18 - PHIM CẤM KHÁN GIẢ DƯỚI 18 TUỔI</strong>
                                 @endif
                             </div>
@@ -115,7 +115,7 @@
                         </li>
                     </ul>
                     <div class="descrip">
-                        <p> {{$film -> desc}} <br>
+                        <p> aa <br>
                             Ở mấy bài trước, chúng ta đã tìm hiểu về VM, về web app, về Database.
                             Chừng đó là cũng tạm đủ để làm một ứng dụng hoàn chỉnh rồi.
                             Thế nhưng, để cho đủ bộ, trong bài này mình sẽ giới thiệu về những
@@ -320,108 +320,24 @@
                 </ul>
             </div>
             <div class="cinemas" >
-                @for($i=0; $i<=5; $i++)
+                @foreach( $listCinema as $cinema )
                     <div class="cinema_child">
-                        <div class="site"><h3>CGV Hùng Vương Plaza</h3></div>
-
+                        <div class="site"><h3>{{ $cinema->name }}</h3></div>    
                         <div class="cinema 2d"><h4>Rạp 2D</h4></div>
-
                         <ul class="products-grid-movie tab-showtime">
-                            <li class="item">
-                                <a href="#">
-                                    <span>12:20 PM</span><br>
-                                    <span>114 ghế trống</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <span>13:40 PM</span><br>
-                                    <span>212 ghế trống</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <span>15:10 PM</span><br>
-                                    <span>111 ghế trống</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <span>16:10 PM</span><br>
-                                    <span>80 ghế trống</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <span>18:00 PM</span><br>
-                                    <span>101 ghế trống</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <span>20:50 PM</span><br>
-                                    <span>114 ghế trống</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <span>22:10 PM</span><br>
-                                    <span>245 ghế trống</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="cinema goldclass"><h4>Rạp GOLD CLASS</h4></div>
-
-                        <ul class="products-grid-movie tab-showtime">
-                            <li class="item">
-                                <a href="#">
-                                    <span>12:50 PM</span><br>
-                                    <span>42 ghế trống</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <span>15:40 PM</span><br>
-                                    <span>40 ghế trống</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <span>21:20 PM</span><br>
-                                    <span>31 ghế trống</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="cinema dolbyatmos"><h4>Rạp Dolby Atmos</h4></div>
-
-                        <ul class="products-grid-movie tab-showtime">
-                            <li class="item">
-                                <a href="#">
-                                    <span>11:50 AM</span><br>
-                                    <span>248 ghế trống</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <span>14:40 PM</span><br>
-                                    <span>242 ghế trống</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <span>17:30 PM</span><br>
-                                    <span>237 ghế trống</span>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <span>20:20 PM</span><br>
-                                    <span>207 ghế trống</span>
-                                </a>
-                            </li>
+                            @foreach ($cinema->rooms as $room)
+                                @foreach ($room->schedules as $schedule)
+                                    <li class="item">
+                                        <a href="/booking">
+                                            <span>{{ $schedule->start_time }}</span><br>
+                                            <span>114 ghế trống</span>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            @endforeach
                         </ul>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
         <button type="button" id="cboxClose" data-dismiss="modal">close</button>
