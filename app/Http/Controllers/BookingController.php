@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Film;
 use DB;
+use Illuminate\Support\Facades\Auth;
 use View;
 
 class BookingController extends Controller
@@ -14,13 +15,8 @@ class BookingController extends Controller
     // }
     
     public function index(){
-        $session = session('login');
-        if($session != 'ok'){
-            return redirect('/login');
-        }
         $data = DB::table('film')->where('id',2)->get();
         return view('booking', ['data' => $data] );
-
 
     }
 }

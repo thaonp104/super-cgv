@@ -17,10 +17,6 @@ class IndexController extends Controller
         // lay danh sach user
         $data['films'] = Film::where('trang_thai','0')
             ->get();
-        // $data['demo'] = Demo::where('id',1)->first();
-        // $data['db'] = DB::table('demo')->get();
-
-        // dd($data['db']);
         return View::make('index', $data);
     }
 
@@ -53,27 +49,5 @@ class IndexController extends Controller
             return redirect(url('/login'));
         }
         else return redirect(url('/create'));
-    }
-    public function login_result(Request $request){
-        if($_POST['re-text']!= 'Y35NVL'){
-            return redirect(url('/login'));
-        }
-        else{
-            $clients = Client::all();
-            foreach ($clients as $client){
-                if(Hash::check($_POST['password'],$client->password)){
-                    if($client->email == $_POST['email']){
-                        session_start();
-//                        $request->session()->put('login', '1');
-                        session(['login' => 'ok']);
-                        return redirect(url('/phimdangchieu'));
-//                        $value = $request->session()->get('logout');
-                        break;
-                    }
-                }
-            }
-            return redirect(url('/login'));
-        }
-
     }
 }

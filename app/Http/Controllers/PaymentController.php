@@ -3,15 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
     public function index(){
-        $session = session('login');
-        if($session != 'ok'){
-            return redirect('/login');
-        }
-        $data = [];
-        return view('payment',$data);
+            $data = [];
+            return view('payment',$data);
     }
 }

@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Route as IlluminateRoute;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,9 +12,9 @@
 |
 */
 
-Route::get('/booking','BookingController@index');
 
-Route::get('/payment', 'PaymentController@index');
+
+
 
 Route::get('/phimdangchieu','PhimDangChieuController@index');
 
@@ -27,4 +28,11 @@ Route::get('/create','indexController@create');
 
 Route::post('/saveAccount','indexController@saveAccount');
 
-Route::post('/login_result','indexController@login_result');
+//Route::post('/login_result','indexController@login_result');
+
+Route::post('/login_result','AuthController@login');
+
+Route::group(['middleware'=>'clientRoute'],function (){
+    Route::get('/payment', 'PaymentController@index');
+    Route::get('/booking','BookingController@index');
+});
