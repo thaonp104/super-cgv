@@ -17,7 +17,9 @@ class clientRoute
     public function handle($request, Closure $next)
     {
         if(Auth::check()){
+
             return $next($request);
+//            return "ok";
         }
         else{
             return redirect('/login');

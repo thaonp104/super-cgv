@@ -41,7 +41,7 @@ class IndexController extends Controller
             $cinemai['rooms'] = $listRoom;
             if( sizeof($listRoom) > 0 ) array_push($listCinema,$cinemai);
         }
-        // dd($listCinema) ;
+//         dd($listCinema) ;
         return view('detailFilm')->with('listCinema',$listCinema);
     }
 
