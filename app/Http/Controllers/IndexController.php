@@ -34,7 +34,7 @@ class IndexController extends Controller
                 $listSchedule = [];
                 $schedulej = $roomj->schedule()->get();
                 foreach( $schedulej as $schedulet ){
-                    if( $schedulet->film_id == $id ){
+                    if( $schedulet->film_id == $id){
                         $schedulet['film'] = $schedulet->film()->get();
                         array_push($listSchedule,$schedulet);
                     }

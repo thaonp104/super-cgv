@@ -233,7 +233,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="location" >
+            {{-- <div class="location" >
                 <ul class="toggle-tabs">
                     <li class="current">
                         <span>Hồ Chí Minh</span>
@@ -299,8 +299,8 @@
                         <span>Tiền Giang</span>
                     </li>
                 </ul>
-            </div>
-            <div class="type">
+            </div> --}}
+            {{-- <div class="type">
                 <ul class="toggle-tabs">
                     <li class="current">
                         <span>2D Phụ Đề Việt</span>
@@ -318,12 +318,11 @@
                         <span>4DX3D Phụ Đề Việt</span>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
             <div class="cinemas" >
                 @foreach( $listCinema as $cinema )
                     <div class="cinema_child">
                         <div class="site"><h3>{{ $cinema->name }}</h3></div>    
-                        <div class="cinema 2d"><h4>Rạp 2D</h4></div>
                         <ul class="products-grid-movie tab-showtime">
                             @foreach ($cinema->rooms as $room)
                                 @foreach ($room->schedules as $schedule)
