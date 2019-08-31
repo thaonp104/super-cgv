@@ -18,7 +18,7 @@ class CreateFilmTable extends Migration
             $table->string('name')->unique();
             $table->string('type');
             $table->integer('leng');
-            $table->timestamp('release_date');
+            $table->string('release_date');
             $table->integer('like');
             $table->string('director');
             $table->enum('trang_thai',['0','1']);

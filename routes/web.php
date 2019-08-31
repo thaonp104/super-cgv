@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Route as IlluminateRoute;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,9 +12,6 @@
 |
 */
 
-Route::get('/booking','BookingController@index');
-
-Route::get('/payment', 'PaymentController@index');
 
 Route::get('/phimdangchieu','PhimDangChieuController@index');
 
@@ -23,6 +21,8 @@ Route::get('/detailFilm/{id}','indexController@detailFilm');
 
 Route::get('/login','indexController@login');
 
+Route::get('/logout','AuthController@logout');
+
 Route::get('/create','indexController@create');
 
 Route::post('/saveAccount','indexController@saveAccount');
@@ -30,25 +30,37 @@ Route::post('/saveAccount','indexController@saveAccount');
 Route::post('/login_result','indexController@login_result');
 
 Route::get('/a', function () {
-    $data = App\Schedule::select('date')->get();
+    // $t = date('d-m-y',535075200);
 
-    $time = [];
-    foreach( $data as $d ){
-        $t = strtotime($d->date);
-        array_push($time,$t);
+    // $timestamp = strtotime('16-12-1986');  
+    // echo $t."<br>".$timestamp;
+
+    // $today = strtotime('28-02-2008');
+    // $tomorrow = strtotime("+1 day",$today);
+    // echo date('d-m-y',$tomorrow);
+
+    $day = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    $today = date('d-m-20y');
+    for( $i = 0 ; $i <= 6 ; $i++ ){
+        if( $i == 0 ) $todayTime = strtotime($today);
+        else $todayTime = strtotime('+1 day', $todayTime);
+        $today = date('d-m-20y',$todayTime);
+        $todayD = date('d',$todayTime);
+        $todayM = date('m',$todayTime);
+        echo $today.'<br>';
     }
-
-    // $timestamp = strtotime('12-05-2016');  
-    // echo $timestamp."<br>";
-
-    for( $i = 0 ; $i < sizeof($time) ; $i++ ){
-        DB::table('schedule')->update(['date' => $time[$i]]);
-    }
-
-    $data2 = App\Schedule::select('date')->get()->toArray();
-
-    echo "<pre>";
-    print_r($data2);
-    echo "<pre>";
+    // $todayTime = strtotime($today);
+    // $tomorrowTime = strtotime("+1 day",$todayTime);
+    
+    // $tomorrow = date('d-m-y',$tomorrowTime);
+    // echo $today.'<br>'.$tomorrow;
 });
 
+//Route::post('/login_result','indexController@login_result');
+
+Route::post('/login_result','AuthController@login');
+
+Route::group(['middleware'=>'clientRoute'],function (){
+    Route::get('/payment', 'PaymentController@index');
+    Route::get('/booking','BookingController@index');
+});

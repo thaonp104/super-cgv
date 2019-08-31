@@ -13,16 +13,36 @@
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/mystyle.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/detailFilm.css')}}">
     @yield('css')
+
+    <script src="{{asset('js/jsDetailFilm.js')}}"></script>
 <!-- {{URL::asset('')}} -->
 </head>
 <body>
 <header>
     <div class="navbar">
-        <div class="menu">
-            <a href="#" class="styleA">TUYỂN DỤNG</a>
-            <a href="#" class="styleA">LIÊN HỆ CGV</a>
-            <a href="/login" class="styleA">ĐĂNG NHẬP/ ĐĂNG KÝ</a>
-            <span>
+        @if(Illuminate\Support\Facades\Auth::check())
+            <div class="menu">
+                <a href="#" class="styleA">TUYỂN DỤNG</a>
+                <a href="#" class="styleA">LIÊN HỆ CGV</a>
+                <a href="/logout" class="styleA">LOGOUT</a>
+                <span>
+                    <ul class="language">
+                        <li>
+                            <button onclick="myFunction1()" class="selected vn">VN</button>
+                        </li>
+                        <li>
+                            <button onclick="myFunction2()" class="nonSelected en">EN</button>
+                        </li>
+                    </ul>
+                </span>
+
+            </div>
+        @else
+            <div class="menu">
+                <a href="#" class="styleA">TUYỂN DỤNG</a>
+                <a href="#" class="styleA">LIÊN HỆ CGV</a>
+                <a href="/login" class="styleA">ĐĂNG NHẬP/ ĐĂNG KÝ</a>
+                <span>
                     <ul class="language">
                         <li>
                             <button onclick="myFunction1()" class="selected vn">VN</button>
@@ -33,7 +53,8 @@
                     </ul>
             </span>
 
-        </div>
+            </div>
+        @endif
     </div>
     <div class="header">
         <div class="content">

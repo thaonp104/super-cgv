@@ -8,7 +8,7 @@
                     <span>/ </span>
                 </li>
                 <li class="product">
-                    <strong>{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->name }}</strong>
+                    <strong>{{ $film[0]->name }}</strong>
                 </li>
             </ul>
         </div>
@@ -19,15 +19,15 @@
                         <span class="h1">Nội Dung Phim</span>
                     </div>
                     <div class="product-img">
-                        <img src="{{URL::asset($listCinema[0]->rooms[0]->schedules[0]->film[0]->image)}}" alt="aa">
+                        <img src="{{URL::asset($film[0]->image)}}" alt="aa">
                     </div>
                     <div class="product-shop">
                         <div class="product-name">
-                            <span class="h1">{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->name }}</span>
+                            <span class="h1">{{ $film[0]->name }}</span>
                         </div>
                         <div class="movie-director movie-infor">
                             <label>Đạo diễn: </label>
-                            <span class="std">&nbsp;{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->director }}</span>
+                            <span class="std">&nbsp;{{ $film[0]->director }}</span>
                         </div>
                         <div class="movie-actress movie-infor">
                             <label>Diễn viên: </label>
@@ -35,26 +35,26 @@
                         </div>
                         <div class="movie-genre movie-infor">
                             <label>Thể loại:</label>
-                            <div class="std">&nbsp;&nbsp;{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->type }}</div>
+                            <div class="std">&nbsp;&nbsp;{{ $film[0]->type }}</div>
                         </div>
                         <div class="movie-release movie-infor">
                             <label>Khởi chiếu:</label>
-                            <div class="std">&nbsp;{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->release_date }}</div>
+                            <div class="std">&nbsp;{{ date('d-m-20y',$film[0]->release_date) }}</div>
                         </div>
                         <div class="movie-actress movie-infor">
                             <label>Thời lượng:</label>
-                            <div class="std">&nbsp;{{ $listCinema[0]->rooms[0]->schedules[0]->film[0]->leng }} phút</div>
+                            <div class="std">&nbsp;{{ $film[0]->leng }} phút</div>
                         </div>
                         <div class="movie-rating movie-rated-web">
                             <label>Rated:</label>
                             <div class="std">&nbsp;&nbsp;
-                                @if($listCinema[0]->rooms[0]->schedules[0]->film[0]->rated == 'p')
+                                @if($film[0]->rated == 'p')
                                     <strong>P - PHIM DÀNH CHO MỌI ĐỐI TƯỢNG</strong>
-                                @elseif($listCinema[0]->rooms[0]->schedules[0]->film[0]->rated == 'c13')
+                                @elseif($film[0]->rated == 'c13')
                                     <strong>C13 - PHIM CẤM KHÁN GIẢ DƯỚI 13 TUỔI</strong>
-                                @elseif($listCinema[0]->rooms[0]->schedules[0]->film[0]->rated == 'c16')
+                                @elseif($film[0]->rated == 'c16')
                                     <strong>C16 - PHIM CẤM KHÁN GIẢ DƯỚI 16 TUỔI</strong>
-                                @elseif($listCinema[0]->rooms[0]->schedules[0]->film[0]->rated == 'c18')
+                                @elseif($film[0]->rated == 'c18')
                                     <strong>C18 - PHIM CẤM KHÁN GIẢ DƯỚI 18 TUỔI</strong>
                                 @endif
                             </div>
@@ -92,9 +92,9 @@
                                     </span>
                                 </div>
                                 <button type="button" title="Mua vé" class="button btn-booking" data-toggle="modal" data-target="#myModal">
-                                <span>
-                                    <span>Mua vé</span>
-                                </span>
+                                    <span>
+                                        <span>Mua vé</span>
+                                    </span>
                                 </button>
                             </div>
                         </div>
@@ -133,104 +133,16 @@
         <div class="content-modal">
             <div class="date">
                 <ul class="toggle-tabs">
-                    <li class="current">
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Fri</em>
-                            <strong>02</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Sat</em>
-                            <strong>03</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Sun</em>
-                            <strong>04</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Mon</em>
-                            <strong>05</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Tue</em>
-                            <strong>06</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Wed</em>
-                            <strong>07</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Thu</em>
-                            <strong>08</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Fri</em>
-                            <strong>09</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Sat</em>
-                            <strong>10</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Sun</em>
-                            <strong>11</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Mon</em>
-                            <strong>12</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Tue</em>
-                            <strong>13</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Wed</em>
-                            <strong>14</strong>
-                        </div>
-                    </li>
-                    <li class="last">
-                        <div class="day" onclick="">
-                            <span>08</span>
-                            <em>Thu</em>
-                            <strong>15</strong>
-                        </div>
-                    </li>
+                    <?php $i = 1 ?>
+                    @foreach($list as $listCinema)
+                        <li id="{{$i++}}" onclick="dayClick(this)">
+                            <div class="day">
+                                <span>{{$listCinema['day']}}</span>
+                                <em>{{$listCinema['m']}}</em>
+                                <strong>{{$listCinema['d']}}</strong>
+                            </div>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
             {{-- <div class="location" >
@@ -318,37 +230,40 @@
                         <span>4DX3D Phụ Đề Việt</span>
                     </li>
                 </ul>
-            </div> --}}
-            <div class="cinemas" >
-                @foreach( $listCinema as $cinema )
-                    <div class="cinema_child">
-                        <div class="site"><h3>{{ $cinema->name }}</h3></div>    
-                        <ul class="products-grid-movie tab-showtime">
-                            @foreach ($cinema->rooms as $room)
-                                @foreach ($room->schedules as $schedule)
-                                    <li class="item">
-                                        <a href="/booking">
-                                            <span>{{ $schedule->start_time }}</span><br>
-                                            <span>114 ghế trống</span>
-                                        </a>
-                                    </li>
+            </div> --}}<?php $i=1; ?>
+            @foreach($list as $listCinema)
+                <div class="cinemas" id="day{{ $i++ }}" >    
+                    @foreach( $listCinema['cinemas'] as $cinema )
+                        <div class="cinema_child">
+                            <div class="site"><h3>{{ $cinema->name }}</h3></div>    
+                            <ul class="products-grid-movie tab-showtime">
+                                @foreach ($cinema->rooms as $room)
+                                    @foreach ($room->schedules as $schedule)
+                                        <li class="item">
+                                            <a href="/booking">
+                                                <span>{{ $schedule->start_time }}</span><br>
+                                                <span>114 ghế trống</span>
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 @endforeach
-                            @endforeach
-                        </ul>
-                    </div>
-                @endforeach
-            </div>
+                            </ul>
+                        </div>
+                    @endforeach
+                </div> 
+            @endforeach
         </div>
         <button type="button" id="cboxClose" data-dismiss="modal">close</button>
 
     </div>
-    <div class="banner-bottom">
+    <div class="banner-bottom" id="banner-bottom">
         <div class="sticky-banner" style="display: block;">
             <div class="banner-click">
                 <a href="#" target="_blank">
                     <img alt="" src="{{URL::asset('images/nha-qua-di-980x120.jpg')}}"></a>
-                <span class="close-bottom-banner">X</span>
+                <button onclick="hide_banner()" class="close-bottom-banner" style="border: none">X</button>
             </div>
         </div>
     </div>
+    
 @endsection

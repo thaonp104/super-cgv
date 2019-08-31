@@ -10,7 +10,7 @@ $factory->define(App\Film::class, function (Faker $faker) {
         'name' => $faker->unique()->word,
         'type' => $faker->word,
         'leng' => $faker->numberBetween($min = 90, $max = 200),
-        'release_date' => $faker->date,
+        'release_date' => $faker->unixTime,
         'like' => 0,
         
         'director' => $faker->name,

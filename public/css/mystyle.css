@@ -8,6 +8,9 @@ html {
 a{
     text-decoration: none;
 }
+a:focus{
+    text-decoration: none;
+}
 a:hover{
     text-decoration: none;
 }
@@ -211,18 +214,23 @@ header .navbar .menu
 }
 .col1 .new{
     position: relative;
-    top: 15px;
+    top: 10px;
 }
-.col1 input{
+.col1 input {
     width: 139px;
     height: 25px;
+    top: 16px;
     padding-left: 30px;
+    position: relative;
 }
 .col1 i{
     position: relative;
     font-size: 15px;
     top: 20px;
     left: 8px;
+    width: 10px;
+    height: 10px;
+
 }
 .col2 .buy{
     position: relative;
@@ -839,3 +847,35 @@ header .navbar .menu
 }
 /* end footer_cgv_address */
 /* end footer */
+
+
+.banner-bottom {
+    width: 980px;
+    margin: 0 auto;
+}
+.sticky-banner {
+    display: none;
+    position: fixed;
+    left: 0;
+    bottom: -4px;
+    text-align: center;
+    width: 100%;
+    z-index: 99998;
+}
+.banner-click {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding-left: 1%;
+}
+.close-bottom-banner {
+    position: relative;
+    bottom: 60px;
+    right: 18px;
+    background: #f5f5f5;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 99999;
+    float: none!important;
+}

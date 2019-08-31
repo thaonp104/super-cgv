@@ -44,4 +44,18 @@
         </form>
 
     </div>
+    <div class="banner-bottom" id="banner-bottom">
+        <div class="sticky-banner" style="display: block;">
+            <div class="banner-click">
+                <a href="#" target="_blank">
+                    <img alt="" src="{{URL::asset('images/nha-qua-di-980x120.jpg')}}"></a>
+                <button onclick="hide_banner()" class="close-bottom-banner" style="border: none">X</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function hide_banner() {
+            document.getElementsByClassName('banner-bottom')[0].style.display= 'none';
+        }
+    </script>
 @endsection
