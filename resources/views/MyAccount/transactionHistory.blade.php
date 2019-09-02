@@ -22,14 +22,12 @@
                         <li class="number_items">{{$bills->count()}} Sản Phẩm</li>
                         <li class="number_display">
                             <span>HIỂN THỊ: </span>
-{{--                            <form action="">--}}
-                                <select name="number" onchange="showNumber(this.value)">
+                                <select name="number" >
                                     <option value="5">5</option>
                                     <option value="10">10</option>
                                     <option value="15">15</option>
                                     <option value="all">All</option>
                                 </select>
-{{--                            </form>--}}
                         </li>
                     </ul>
                 </div>
@@ -170,8 +168,4 @@
             </div>
         </div>
     </div>
-    <script !src="">
-        function showNumber(str) {
-        }
-    </script>
 @endsection
