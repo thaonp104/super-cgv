@@ -540,7 +540,7 @@ product-view .product-shop, .product-view .add-to-cart-wrapper, .product-view .b
     padding: 20px;
     margin-left: 20px;
     border-bottom: 2px solid #2b2b2b;
-
+    display: none;
 }
 .content-modal .cinemas .cinema_child{
     display: inline-block;
@@ -588,6 +588,8 @@ product-view .product-shop, .product-view .add-to-cart-wrapper, .product-view .b
     float: left;
     width: 100%;
 }
-
+.show{
+    display: block;
+}
 /*end mua ve*/
 
