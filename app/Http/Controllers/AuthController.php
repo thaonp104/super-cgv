@@ -6,6 +6,15 @@ use App\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Bill;
+use App\Ticket;
+use App\Room;
+use App\Schedule;
+use App\Seat;
+use App\Cinema;
+use App\Film;
+use View;
+use DB;
 
 class AuthController extends Controller
 {
@@ -19,7 +28,7 @@ class AuthController extends Controller
             $password = $request['password'];
             if(Auth::attempt(['email'=>$email, 'password'=>$password]))
 //                return Auth::user()->email;
-                return redirect(url('/'));
+                return redirect(url('/myAccount'));
             else
                 return redirect(url('/login'));
 
@@ -28,5 +37,20 @@ class AuthController extends Controller
     public function logout(){
         Auth::logout();
         return redirect(url('/login'));
+    }
+    public function myAccount(){
+        $data['bills'] = Bill::where('client_id',\auth()->user()->id)->get();
+        $data['tickets'] = Ticket::all();
+        return view('MyAccount.myAccount', $data);
+    }
+    public  function transactionHistory(){
+        $data['bills'] = Bill::where('client_id',\auth()->user()->id)->get();
+        $data['tickets'] = Ticket::all();
+        $data['seats'] = Seat::all();
+        $data['schedules'] = Schedule::all();
+        $data['rooms'] = Room::all();
+        $data['films'] = Film::all();
+        $data['cinemas'] = Cinema::all();
+        return View('MyAccount.transactionHistory',$data);
     }
 }

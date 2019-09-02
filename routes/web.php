@@ -22,11 +22,7 @@ Route::get('/','indexController@index');
 
 Route::get('/detailFilm/{id}','indexController@detailFilm');
 
-Route::get('/login','indexController@login');
-
 Route::get('/logout','AuthController@logout');
-
-Route::get('/create','indexController@create');
 
 Route::post('/saveAccount','indexController@saveAccount');
 
@@ -37,4 +33,10 @@ Route::post('/login_result','AuthController@login');
 Route::group(['middleware'=>'clientRoute'],function (){
     Route::get('/payment', 'PaymentController@index');
     Route::get('/booking','BookingController@index');
+    Route::get('/myAccount','AuthController@myAccount');
+    Route::get('/transactionHistory', 'AuthController@transactionHistory');
+});
+Route::group(['middleware'=>'RedirectMyAccount'],function (){
+    Route::get('/login','indexController@login');
+    Route::get('/create','indexController@create');
 });

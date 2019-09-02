@@ -17,6 +17,9 @@ a:hover{
 body{
     margin: 0 auto;
 }
+.upcase{
+    text-transform: uppercase;
+}
 /* thanh navbar */
 header .navbar
 {
@@ -219,7 +222,7 @@ header .navbar .menu
 .col1 input {
     width: 139px;
     height: 25px;
-    top: 16px;
+    top: 0px;
     padding-left: 30px;
     position: relative;
 }
@@ -230,7 +233,7 @@ header .navbar .menu
     left: 8px;
     width: 10px;
     height: 10px;
-
+    z-index: 50;
 }
 .col2 .buy{
     position: relative;

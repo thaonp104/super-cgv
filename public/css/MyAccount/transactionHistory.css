@@ -1,0 +1,155 @@
+.block-content .eight {
+    background: url("../../images/ribon_left.png") no-repeat scroll left center #e71a0f;
+    padding-left: 18px;
+}
+.block-content .eight a{
+    color: #fff;
+}
+/*transaction history*/
+.my-account .account-infor{
+    width: 735px;
+    padding: 0px 0px 0px 10px;
+    float: right;
+    margin-bottom: 25px;
+}
+.account-content .page-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+    background: #222;
+    height: 34px;
+    margin-bottom: 10px;
+}
+.account-content .page-title h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 23px;
+    line-height: 34px;
+    text-align: center !important;
+}
+/*button action*/
+.button_action{
+    display: inline-block;
+}
+.button_action .item_action{
+    padding-right: 10px;
+}
+.button_action .item_action button{
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 6px;
+}
+.button_action .action_film button{
+    background-color: #e71a0f ;
+}
+.button_action .action_phototicket button{
+    background-color: #6c757d;
+}
+.button_action .action_quay button{
+    background-color: #6c757d;
+}
+/*end button action*/
+
+/*number shown*/
+.number_shown{
+    margin-top: 10px;
+    display: inline-block;
+    position: relative;
+    left: 500px;
+
+}
+.number_shown .number_items{
+    font-weight: bold;
+    color: #6c757d;
+    padding-right: 15px;
+    position: relative;
+    top: 2px;
+}
+/*end number shown*/
+
+/*transactions*/
+.transaction{
+    display: inline-block;
+    margin-top: 20px;
+    clear: both;
+    margin-bottom: 10px;
+
+}
+.transactions hr{
+    background-color: #6c757d;
+    height: 1px;
+    margin: 0px;
+}
+.transaction .transaction_id{
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 15px;
+}
+.transaction .transaction_id span{
+    font-style: italic;
+}
+.transaction .transaction_id i{
+    margin-left: 7px;
+    font-size: 25px;
+    color: red;
+    position: absolute;
+    top: 0px;
+    /*right: -34px;*/
+}
+.transaction_content .movie_rating{
+    position: relative;
+    z-index: 20;
+    width: 45px;
+    height: 30px;
+    top: 0px;
+    left: 0px;
+    font-size: 0px;
+    background: url("../../images/bg-movie-rating.png");
+    background-repeat: no-repeat;
+}
+.transaction_content .c18{
+    background-position: -144px -2px;
+}
+.transaction_content .c16{
+    background-position: -97px -2px;
+}
+.transaction_content .c13{
+    background-position: -50px -2px;
+}
+.transaction_content .cp{
+    background-position: -3px -2px;
+}
+.transaction .film_image{
+    float: left;
+    padding-right: 0px;
+}
+.transaction .film_image img{
+    width: 90%;
+    height: auto;
+}
+.transaction_content .film_infor{
+    float: right;
+}
+.transaction_content .film_infor .film_title{
+    color: #1d2124;
+}
+.transaction_content .transaction_price{
+    font-weight: bold;
+}
+.transaction_content .transaction_detail{
+    margin-top: 20px;
+    background-color: #1f6fb2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 10px;
+
+}
+.transaction_content .transaction_detail a{
+    color: #fff;
+}
+/*end transactions*/
+
+/*end transaction history*/
