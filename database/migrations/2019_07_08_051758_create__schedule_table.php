@@ -17,7 +17,7 @@ class CreateScheduleTable extends Migration
             $table->bigIncrements('id');
             $table->string('start_time');
             $table->string('end_time');
-            $table->integer('date');
+            $table->date('date');
             $table->unsignedBigInteger('room_id');
             $table->foreign('room_id')->references('id')->on('room');
             $table->unsignedBigInteger('film_id');

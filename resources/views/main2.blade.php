@@ -23,7 +23,7 @@
     <div class="navbar">
         @if(Illuminate\Support\Facades\Auth::check())
             <div class="menu">
-                <a class="styleA upcase">XIN CHÀO, {{auth()->user()->name}}!</a>
+                <a class="styleA upcase" href="/myAccount">XIN CHÀO, {{auth()->user()->name}}!</a>
                 <a href="#" class="styleA">TUYỂN DỤNG</a>
                 <a href="#" class="styleA">LIÊN HỆ CGV</a>
                 <a href="/logout" class="styleA">LOGOUT</a>
@@ -61,7 +61,7 @@
     <div class="header">
         <div class="content">
             <div class="symbol">
-                <a href="#">
+                <a href="/">
                     <img src="{{URL::asset('images/cgvlogo.png')}}" class="cgv">
                 </a>
             </div>
@@ -87,7 +87,7 @@
                         <div class="son rap">
                             <ul>
                                 <li>
-                                    <a href="#">Tất Cả Các Rạp <i class="	far fa-hand-point-right"></i></a>
+                                    <a href="/allCinemas/option">Tất Cả Các Rạp <i class="	far fa-hand-point-right"></i></a>
                                 </li>
                                 <li>
                                     <a href="#">Rạp Đặc Biệt <i class="	far fa-hand-point-right"></i></a>

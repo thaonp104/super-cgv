@@ -50,8 +50,10 @@ class IndexController extends Controller
         $day = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
         $today = date('d-m-20y');
         for( $i = 0 ; $i <= 6 ; $i++ ){         //for từng ngày để tìm lịch chiếu
-            if( $i == 0 ) $todayTime = strtotime($today);
-            else $todayTime = strtotime('+1 day', $todayTime);
+            if( $i == 0 )
+                $todayTime = strtotime($today);
+            else
+                $todayTime = strtotime('+1 day', $today);
             $today = date('d-m-20y',$todayTime);           // lấy ngày tháng hôm đó
             $todayD = date('d',$todayTime);
             $todayM = date('m',$todayTime);

@@ -26,15 +26,6 @@ Route::post('/saveAccount','indexController@saveAccount');
 Route::post('/login_result','indexController@login_result');
 
 Route::get('/a', function () {
-    // $t = date('d-m-y',535075200);
-
-    // $timestamp = strtotime('16-12-1986');  
-    // echo $t."<br>".$timestamp;
-
-    // $today = strtotime('28-02-2008');
-    // $tomorrow = strtotime("+1 day",$today);
-    // echo date('d-m-y',$tomorrow);
-
     $day = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
     $today = date('d-m-20y');
     for( $i = 0 ; $i <= 6 ; $i++ ){
@@ -45,11 +36,6 @@ Route::get('/a', function () {
         $todayM = date('m',$todayTime);
         echo $today.'<br>';
     }
-    // $todayTime = strtotime($today);
-    // $tomorrowTime = strtotime("+1 day",$todayTime);
-    
-    // $tomorrow = date('d-m-y',$tomorrowTime);
-    // echo $today.'<br>'.$tomorrow;
 });
 
 //Route::post('/login_result','indexController@login_result');
@@ -66,3 +52,5 @@ Route::group(['middleware'=>'RedirectMyAccount'],function (){
     Route::get('/login','indexController@login');
     Route::get('/create','indexController@create');
 });
+
+Route::get('/allCinemas/{result}', 'CinemaController@allCinemas');
