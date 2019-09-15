@@ -10,10 +10,13 @@ use App\Film;
 $factory->define(App\Schedule::class, function (Faker $faker) {
     $rooms = Room::pluck('id')->toArray();
     $films = Film::pluck('id')->toArray();
+//    $startingDate = $faker->dateTimeThisYear('+1 month');
+    $startingDate = $faker->dateTimeBetween('today', '+10 days');
+    $start = $startingDate->getTimestamp();
+    $endingDate   = strtotime('+2 Hour', $startingDate->getTimestamp());
     return [
-        'start_time'=>$faker->time('h:m'),
-        'end_time'=>$faker->time('h:m'),
-        'date'=>$faker->randomElement(['2019-09-14','2019-09-15','2019-09-16','2019-09-17','2019-09-18','2019-09-19','2019-09-20','2019-09-21']),
+        'start_time'=>$start,
+        'end_time'=>$endingDate,
         'room_id'=>$faker->randomElement($rooms),
         'film_id'=>$faker->randomElement($films),
     ];

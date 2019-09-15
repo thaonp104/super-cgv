@@ -15,9 +15,8 @@ class CreateScheduleTable extends Migration
     {
         Schema::create('schedule', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('start_time');
-            $table->string('end_time');
-            $table->date('date');
+            $table->integer('start_time');
+            $table->integer('end_time');
             $table->unsignedBigInteger('room_id');
             $table->foreign('room_id')->references('id')->on('room');
             $table->unsignedBigInteger('film_id');
