@@ -6,8 +6,8 @@
         <div class="booking-header"><b>BOOKING ONLINE</b></div>
         <div class="seat-header">
             <div class="cinema-info">
-                <span><b>CGV Hồ Gươm Plaza | Cinema 3 | Số ghế (<i>158</i>/178)</b></span>
-                <div><b>29/07/2019 16:50 ~ 29/07/2019 19:10</b></div>
+                <span><b>{{ $cinema_name }} | Cinema {{ $room_name }} | Số ghế (<i>{{ $seat_left }}</i>/{{ $total_seat }})</b></span>
+                <div><b>{{ $date }} {{ $start_time }} ~ {{ $date }} {{ $end_time }}</b></div>
             </div>
         </div>
         <div class="booking-container">
@@ -17,176 +17,54 @@
                 
                 
                 <div class="seat-place">
-                    <div class="row">
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A13</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A12</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A11</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A10</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A9</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A8</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A7</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A6</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A5</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A4</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A3</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A2</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">A1</div>
-                    </div>
-                    <div class="row">
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B13</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B12</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B11</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B10</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B9</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B8</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B7</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B6</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B5</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B4</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B3</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B2</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">B1</div>
-                    </div>
-                    <div class="row">
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C12</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C11</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C10</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C9</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C8</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C7</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C6</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C5</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C4</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C3</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C2</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">C1</div>
-                    </div>
-                    <div class="row">
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D12</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D11</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D10</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D9</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D8</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D7</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D6</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D5</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D4</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D3</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D2</div>
-                        <div class="seat seat-standard" onclick="selectedSeat(this)">D1</div>
-                    </div>
-                    <div class="row">
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E13</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E12</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E11</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E10</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E9</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E8</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E7</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E6</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E5</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E4</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E3</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E2</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">E1</div>
-                    </div>
-                    <div class="row">
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F13</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F12</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F11</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F10</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F9</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F8</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F7</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F6</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F5</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F4</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F3</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F2</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">F1</div>
-                    </div>
-                    <div class="row">
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G13</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G12</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G11</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G10</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G9</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G8</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G7</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G6</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G5</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G4</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G3</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G2</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">G1</div>
-                    </div>
-                    <div class="row">
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H13</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H12</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H11</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H10</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H9</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H8</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H7</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H6</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H5</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H4</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H3</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H2</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">H1</div>
-                    </div>
-                    <div class="row">
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I13</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I12</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I11</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I10</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I9</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I8</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I7</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I6</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I5</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I4</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I3</div>
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I2</div>
-                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">I1</div>
-                    </div>
-                    <div class="row">
-                        <div class="seat seat-empty"></div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J14</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J13</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J12</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J11</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J10</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J9</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J8</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J7</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J6</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J5</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J4</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J3</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J2</div>
-                        <div class="seat seat-sw" onclick="selectedSeat(this)">J1</div>
-                    </div>
+                    <?php 
+                    $k = 0 ;
+                    for( $i = 1 ; $i <= 10 ; $i++ ){  
+                    ?>  
+                        <div class="row">
+                    <?php
+                        for( $j = 15 ; $j >= 1 ; $j-- ){
+                            if( $map[$i][$j] == 1 ){
+                                // ktra xem ghế đã có người đặt chưa
+                                $kt = 0 ;
+                                foreach( $seat_taken as $seat_takeni ){
+                                    if( $seat[$k]->name == $seat_takeni->name ){
+                                        $kt = 1 ;
+                                        break;
+                                    }
+                                }
+                                if( $kt == 1 ){
+                                    ?> <div class="seat seat-chosen">{{ $seat[$k++]->id }}</div> <?php
+                                }
+                                if( $kt != 1 ){
+                                    if( $map_type[$i][$j] == 'standard' ){
+                    ?>
+                                        <div class="seat seat-standard" onclick="selectedSeat(this)">{{ $seat[$k++]->id }}</div>
+                    <?php 
+                                    }
+                                    if( $map_type[$i][$j] == 'vipprime' ){
+                    ?>
+                                        <div class="seat seat-vipprime" onclick="selectedSeat(this)">{{ $seat[$k++]->id }}</div>
+                    <?php 
+                                    }
+                                    if( $map_type[$i][$j] == 'sw' ){
+                    ?>
+                                        <div class="seat seat-sw" onclick="selectedSeat(this)">{{ $seat[$k++]->id }}</div>
+                    <?php 
+                                    }
+                                }
+                            }
+                            if( $map[$i][$j] == 0 ){
+                    ?>
+                                <div class="seat seat-empty"></div>
+                    <?php    
+                            }
+                        }
+                    ?>
+                        </div>
+                    <?php    
+                    }
+                    ?>
                 </div>
 
 
@@ -204,51 +82,55 @@
                     </div>
                 </div>
             </div>
-
-            <div class="booking-info">
-                <div class="format-bg-top"></div>
-                <div class="btn-prev"></div>
-                <ul class="info">
-                    @foreach( $data as $f )
-                    <li class="film-info">
-                    <div class="film-info-th"><img src="{{$f -> image}}" alt=""></div>
-                        <div class="film-info-td">
-                        <div class="film-name">{{$f -> name}}</div>
-                            <div class="film-format">2D</div>
-                            <div class="film-age-limit">{{$f -> rated}}</div>
-                        </div>
-                    </li>
-                    <li class="when-info">
-                        <div class="when-info-th">
-                            <div class="cinema">Rạp chiếu phim</div>
-                            <div class="date">Ngày</div>
-                            <div class="room">Phòng chiếu</div>
-                            <div id="seat-info">Ghế</div>
-                        </div>
-                        <div class="when-info-td">
-                            <div class="cinema-detail"><b>CGV Hồ Gươm Plaza</b></div>
-                            <div class="date-detail"><b>01/08/2019</b></div>
-                            <div class="room-detail"><b>Cinema 4</b></div>
-                            <b><div id="seat-detail"></div></b>
-                        </div>
-                    </li>
-                    <li class="cost-info">
-                        <div class="cost-info-th">
-                            <div class="film">Phim</div>
-                            <div class="combo">Combo</div>
-                            <div class="sum">Tổng</div>
-                        </div>
-                        <div class="cost-info-td">
-                            <b><div id="film-cost">0,00 ₫</div></b>
-                            <b><div id="combo-cost">0,00 ₫</div></b>
-                            <b><div id="sum-cost">0,00 ₫</div></b>
-                        </div>
-                    </li>
-                    @endforeach
-                </ul>
-                <a class="btn-next" href="/payment"></a>
-                <div class="format-bg-bottom"></div>
-            </div>
+            <form action="/payment" method="POST" id="booking-form">
+                @csrf
+                <div class="booking-info">
+                    <div class="format-bg-top"></div>
+                    <div class="btn-prev"></div>
+                    <ul class="info">
+                        @foreach( $data as $f )
+                            <li class="film-info">
+                            <div class="film-info-th"><img src="{{URL::asset($f->image)}}" alt=""></div>
+                                <div class="film-info-td">
+                                    <input type="text" class="film-name" name="film-name" id="film-name" value="{{$f -> name}}" disabled>
+                                    <div class="film-format">2D</div>
+                                    <input type="text" class="film-age-limit" name="film-age-limit" id="film-age-limit" value="{{$f -> rated}}" disabled>
+                                </div>
+                            </li>
+                            <li class="when-info">
+                                <div class="when-info-th">
+                                    <div class="cinema">Rạp chiếu phim</div>
+                                    <div class="date">Ngày</div>
+                                    <div class="room">Phòng chiếu</div>
+                                    <div id="seat-info">Ghế</div>
+                                </div>
+                                <div class="when-info-td">
+                                    <input type="text" class="cinema-detail" name="cinema-detail" id="cinema-detail" value="{{ $cinema_name }}" disabled>
+                                    <input type="text" class="date-detail" name="date-detail" id="date-detail" value="{{ $date }}" disabled>
+                                    <input type="text" class="room-detail" name="room-detail" id="room-detail" value="Cinema {{ $room_name }}" disabled>
+                                    <input type="text" id="seat-detail" name="seat-detail" disabled>
+                                </div>
+                            </li>
+                            <li class="cost-info">
+                                <div class="cost-info-th">
+                                    <div class="film">Phim</div>
+                                    <div class="combo">Combo</div>
+                                    <div class="sum">Tổng</div>
+                                </div>
+                                <div class="cost-info-td">
+                                    <input type="text" id="film-cost" name="filmCost" value="0,00 ₫" disabled>
+                                    <input type="text" id="combo-cost" value="0,00 ₫" disabled>
+                                    <input type="text" id="sum-cost" name="sumCost" value="0,00 ₫" disabled>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <button type="submit" class="btn-booking-next" name="btn-next" onclick="ableInput()">
+                        <span class="btn-next"></span>
+                    </button>
+                    <div class="format-bg-bottom"></div>
+                </div>
+            </form>
         </div>
     </div>
 

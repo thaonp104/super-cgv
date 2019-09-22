@@ -7,8 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
             $data = [];
+            // dd($request);
             return view('payment',$data);
     }
 }

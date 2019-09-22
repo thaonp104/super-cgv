@@ -240,9 +240,9 @@
                                 @foreach ($cinema->rooms as $room)
                                     @foreach ($room->schedules as $schedule)
                                         <li class="item">
-                                            <a href="/booking">
+                                            <a href="/booking/{{ $cinema->id }}/{{ $room->id }}/{{ $schedule->id }}/{{ $film[0]->id }}/{{ $cinema->name }}/{{ $room->name }}/{{ $schedule['seat_left'] }}/{{ $room->total_seat }}/{{ $schedule->start_time }}/{{ $schedule->end_time }}/{{ $schedule->date }}">
                                                 <span>{{ $schedule->start_time }}</span><br>
-                                                <span>114 ghế trống</span>
+                                                <span>{{ $schedule['seat_left'] }} ghế trống</span>
                                             </a>
                                         </li>
                                     @endforeach

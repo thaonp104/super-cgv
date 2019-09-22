@@ -26,4 +26,9 @@ class Schedule extends Model
     {
         return $this->hasMany('App\Ticket');
     }
+
+    public function seat()
+    {
+        return $this->belongsToMany('App\Seat', 'ticket');
+    }
 }

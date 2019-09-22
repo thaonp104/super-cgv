@@ -114,8 +114,10 @@ $(document).ready(function(){
         document.getElementsByClassName('step1-container')[0].style.opacity = "0.5";
     }
     window.pay = function(){
-        if( document.getElementById('iaccept').checked ) alert('Đặt vé thành công');
-        else alert('Hãy tick đồng ý với điều khoản của chúng tôi');
+        if( document.getElementById('iaccept').checked && disable == 1 ) alert('Đặt vé thành công');
+        else 
+            if( disable == 0 ) alert('Hãy chọn hình thúc thanh toán');
+            else alert('Hãy tick đồng ý với điều khoản của chúng tôi');
     }
 });
 

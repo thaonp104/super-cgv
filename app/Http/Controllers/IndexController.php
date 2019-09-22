@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use App\Film;
 use App\Cinema;
@@ -10,6 +9,7 @@ use App\Client;
 use DB;
 use View;
 use Illuminate\Support\Facades\Hash;
+
 class IndexController extends Controller
 {
     public function index()
@@ -19,31 +19,6 @@ class IndexController extends Controller
             ->get();
         return View::make('index', $data);
     }
-
-//     public function detailFilm($id){
-//         $listCinema = [];
-//         $cinema = Cinema::all();
-//         foreach( $cinema as $cinemai ){
-//             $listRoom = [];
-//             $roomi = $cinemai->room()->get();
-//             foreach( $roomi as $roomj ){
-//                 $listSchedule = [];
-//                 $schedulej = $roomj->schedule()->get();
-//                 foreach( $schedulej as $schedulet ){
-//                     if( $schedulet->film_id == $id ){
-//                         $schedulet['film'] = $schedulet->film()->get();
-//                         array_push($listSchedule,$schedulet);
-//                     }
-//                 }
-//                 $roomj['schedules'] = $listSchedule;
-//                 if( sizeof($listSchedule) > 0 ) array_push($listRoom,$roomj);
-//             }
-//             $cinemai['rooms'] = $listRoom;
-//             if( sizeof($listRoom) > 0 ) array_push($listCinema,$cinemai);
-//         }
-// //         dd($listCinema) ;
-//         return view('detailFilm')->with('listCinema',$listCinema);
-//     }
 
     public function detailFilm($id){
         $list = [];
@@ -57,18 +32,21 @@ class IndexController extends Controller
             $todayM = date('m',$todayTime);
                 // tìm lịch chiếu của ngày đó
             $listCinema = [];
-            $film = Film::find($id)->get();
-            $cinema = Cinema::all();
-            foreach( $cinema as $cinemai ){
+            $film = Film::where('id',$id)->get();
+
+            $cinema = Cinema::all();                            // lấy tất cả các rạp
+            foreach( $cinema as $cinemai ){     // với mỗi rạp
                 $listRoom = [];
-                $roomi = $cinemai->room()->get();
-                foreach( $roomi as $roomj ){
+                $roomi = $cinemai->room()->get();               // lấy tất cả các phòng
+                foreach( $roomi as $roomj ){    // với mỗi phòng
                     $listSchedule = [];
-                    $schedulej = $roomj->schedule()->get();
-                    foreach( $schedulej as $schedulet ){
+                    $schedulej = $roomj->schedule()->get();             // lấy tất cả các lịch chiếu
+                    foreach( $schedulej as $schedulet ){        // với mỗi lịch chiếu
                         $date = date('d',$schedulet->date);
-                        if( $schedulet->film_id == $id && $date == $todayD ){
-                            array_push($listSchedule,$schedulet);
+                        if( $schedulet->film_id == $id && $date == $todayD ){     // điều kiện tìm lịch chiếu đang cần
+                            $seat_taken = $schedulet->ticket()->count('Ticket.id');
+                            $schedulet['seat_left'] = $roomj->total_seat - $seat_taken ;
+                            array_push($listSchedule,$schedulet);           
                         }
                     }
                     $roomj['schedules'] = $listSchedule;

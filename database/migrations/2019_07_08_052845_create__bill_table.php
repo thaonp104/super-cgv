@@ -15,7 +15,7 @@ class CreateBillTable extends Migration
     {
         Schema::create('bill', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('payment_date');
+            $table->string('payment_date');
             $table->string('payment_type');
             $table->integer('quantity');
             $table->unsignedBigInteger('client_id');

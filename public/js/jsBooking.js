@@ -36,7 +36,7 @@ $(document).ready(function () {
                                     seatClass[j].style.backgroundColor = "#b11500";
                                     seatClass[j].style.color = "#fff";
                                     seatClass[j].style.borderColor = "#b11500";
-
+                                    
                                     sum += 280000 ;
                                 }   
                                 else{                                             // nếu ghế đã chọn rồi xong lại bấm lại
@@ -132,31 +132,34 @@ $(document).ready(function () {
         t /= 1000; 
 
         if( t == 0 ){
-            document.getElementById('film-cost').textContent = t + ",00 ₫" ;
-            document.getElementById('sum-cost').textContent = t + ",00 ₫" ;
+            document.getElementById('film-cost').value = t + ",00 ₫" ;
+            document.getElementById('sum-cost').value = t + ",00 ₫" ;
         }
         else{
-            document.getElementById('film-cost').textContent = t + ".000,00 ₫" ;
-            document.getElementById('sum-cost').textContent = t + ".000,00 ₫" ;
+            document.getElementById('film-cost').value = t + ".000,00 ₫" ;
+            document.getElementById('sum-cost').value = t + ".000,00 ₫" ;
+
             document.getElementById('seat-info').style.display = "block";
             document.getElementById('seat-detail').style.display = "block";
-            // if( document.getElementById('seat-detail').textContent == '' )
-            //     document.getElementById('seat-detail').textContent += s.textContent;
-            // else document.getElementById('seat-detail').textContent += ', ' + s.textContent;
         }
 
         var k = 0 ;
-        document.getElementById('seat-detail').textContent = "" ;
+        document.getElementById('seat-detail').value = "" ;
 
         for( var i = 0 ; i < seat.length ; i++ )
             if( d[i] == 1 ){
-                document.getElementById('seat-detail').textContent += seat[i] ;
+                document.getElementById('seat-detail').value += seat[i] ;
                 k = i ;
                 break ;
             }
 
         for( var i = k+1 ; i < seat.length ; i++ )
             if( d[i] == 1 )
-                document.getElementById('seat-detail').textContent += ', ' + seat[i] ;
+                document.getElementById('seat-detail').value += ', ' + seat[i] ;
+    }
+
+    window.ableInput = function(){
+        $('#film-name, #film-age-limit, #cinema-detail, #date-detail, #room-detail, #seat-detail, #film-cost, #combo-cos, #sum-cost').removeAttr('disabled');
+        document.getElementById('seat-detail').style.display = block;
     }
 });
