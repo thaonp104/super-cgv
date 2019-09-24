@@ -1,0 +1,61 @@
+h1,h3,h2{
+    margin: 0px;
+}
+.my-account{
+    /*display: inline-block;*/
+    width: 980px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+/*menu*/
+.my-account .account-menu{
+    width: 245px;
+    margin: 0px 0px 20px;
+    padding: 0px 10px 0px 0px;
+    float: left;
+}
+.block-title strong {
+    margin: 0;
+    margin-bottom: 10px;
+    color: #636363;
+    font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 1.4;
+    text-rendering: optimizeSpeed;
+    text-transform: uppercase;
+    color: #e71a0f;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.upcase{
+    text-transform: uppercase;
+}
+.block-title span {
+    /*color: #222;*/
+    font-size: 22px;
+}
+.block-content li {
+    background: url("../../images/ribon_left-ccc.png") no-repeat scroll left center #ccc;
+    color: #fff;
+    height: 34px;
+    padding-left: 18px;
+    float: left;
+    width: 100%;
+    margin: 2px 0px;
+}
+
+.block-content li a {
+    color: #666;
+    margin-left: 5px !important;
+    line-height: 34px !important;
+    font-weight: bold;
+}
+.block-content li.current a {
+    color: #fff !important;
+}
+/*end menu*/

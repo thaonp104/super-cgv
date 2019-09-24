@@ -1,0 +1,257 @@
+.block-content .one {
+    background: url("../../images/ribon_left.png") no-repeat scroll left center #e71a0f;
+    padding-left: 18px;
+}
+.block-content .one a{
+    color: #fff;
+}
+/*information*/
+.my-account .account-infor{
+    width: 735px;
+    padding: 0px 0px 0px 10px;
+    float: right;
+    margin-bottom: 25px;
+}
+.account-content .page-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+    background: #222;
+    height: 34px;
+    margin-bottom: 10px;
+}
+.account-content .page-title h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 23px;
+    line-height: 34px;
+    text-align: center !important;
+}
+.cgv-barcode-img {
+    float: right;
+    display: block;
+}
+.currentmembercard {
+    float: right;
+    width: 234px;
+    text-align: center;
+    font-size: 13px;
+    /*margin: 0px 0px 10px;*/
+}
+#btnsubmit{
+    display: none;
+}
+#fileToUpload{
+    cursor: pointer;
+}
+.show-barcode-my-cgv img{
+    display: inline-block;
+}
+.show-barcode-my-cgv, .cgv-cgviancard-number{
+    text-align: center;
+    font-size: 13px;
+}
+form input[type="file"] {
+    display: none;
+}
+/*avatar*/
+.image-profile-cgv {
+    float: left;
+}
+.image-profile-cgv label img{
+    border-radius: 50%;
+    border: 2px solid #6c757d;
+}
+.button-change-image-profile {
+    float: left;
+    margin-top: 5px;
+    text-align: center;
+    width: 120px;
+}
+.button-change-image-profile button {
+    background: #9d9b9b;
+    padding: 5px 15px;
+    border-radius: 3px;
+    border: none;
+}
+.button-change-image-profile button > span {
+    color: #fff;
+    font-size: 14px;
+}
+/*barcode*/
+.barcode-my-cgv {
+    float: right;
+    min-width: 30%;
+}
+
+.welcome-msg{
+    clear: both;
+}
+/**/
+.welcome-msg {
+    padding-top: 20px;
+    color: #7f7f7f;
+}
+.welcome-msg .hello {
+    color: #000;
+}
+.welcome-msg p{
+    font-size: 13px;
+}
+
+.box-account {
+    margin-bottom: 45px;
+}
+.cgv-status-member {
+    width: 35%;
+    padding-right: 1%;
+    font-size: 12px;
+}
+.cgv-info {
+    float: left;
+    width: 100%;
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+.cgv-info > div {
+    float: left;
+}
+.cgv-tier {
+    float: left;
+    width: 100%;
+}
+.cgv-info .cgv-status-member label {
+    width: 42%;
+    font-weight: normal;
+}
+.member-icon {
+    background: url("../../images/level-cgv-member.png") no-repeat;
+    width: 36px;
+    height: 32px;
+    float: right;
+    background-position: -102px 3px;
+    margin: -11px 102px 0px 0;
+}
+
+.total-spending {
+    margin-bottom: 4px;
+}
+.cgv-point {
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+}
+.cgv-info label {
+    font-size: 12px;
+}
+.cgv-status-member .format-acc-point .acc-show-point {
+    float: none;
+    font-weight: 600;
+    color: #595959;
+}
+
+.cgv-info .cgv-info-detail {
+    text-align: center;
+}
+.cgv-info-detail {
+    float: left;
+    width: 16.2%;
+    padding: 0px 1% 2px;
+    border-left: 1px solid #222;
+}
+.cgv-info-detail label {
+    font-weight: normal;
+}
+.format-acc {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.format-acc {
+    font-weight: 600;
+}
+.format-acc span.acc-show-point {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    color: #595959;
+}
+.format-acc a {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.icon-acc-add {
+    background: #2f95ec;
+    border-radius: 5px;
+    text-align: center;
+    padding: 3px 20px;
+    color: #fff !important;
+    font-size: 12px;
+}
+
+
+.box-head {
+    margin-top: 30px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 7px;
+}
+.box-head h2 {
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0;
+}
+.box-account .box-title {
+    padding-top: 15px;
+    height: 50px;
+}
+.title-my-cgv {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+    padding-right: 5%;
+}
+.box-title a, .box-head a {
+    font-size: 12px;
+}
+.box a {
+    background: #9d9b9b;
+    color: #fff;
+    display: inline;
+    float: right;
+    min-width: 85px;
+    padding: 3px 5px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+}
+.box-account .box .box-title a {
+    float: none;
+    display: inline-block;
+}
+.box-title h3{
+    float: left;
+}
+.box-title a{
+    float: right;
+}
+.box-content-my-cgv{
+    clear: both;
+}
+.box-content.box-content-my-cgv span {
+    float: left;
+    width: 100%;
+    display: inline;
+    margin-bottom: 7px;
+}
+.box-content span{
+    font-size: 13px;
+    color: #7f7f7f;
+}
+/*end information*/

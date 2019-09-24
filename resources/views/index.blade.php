@@ -1,7 +1,4 @@
-<?php
-// Start the session
-session_start();
-?>
+
 @extends('main2')
 @section('content')
 

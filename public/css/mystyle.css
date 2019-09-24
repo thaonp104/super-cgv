@@ -17,6 +17,9 @@ a:hover{
 body{
     margin: 0 auto;
 }
+.upcase{
+    text-transform: uppercase;
+}
 /* thanh navbar */
 header .navbar
 {
@@ -37,7 +40,12 @@ header .navbar .menu
 }
 .navbar .menu a{
     margin-right: 20px;
+    top: 5px;
     color:#666;
+}
+.navbar .menu .styleA{
+    position: relative;
+    top: -5px;
 }
 .navbar .menu .selected{
     
@@ -137,7 +145,7 @@ header .navbar .menu
     position: absolute;
     top: 20px;
     left: 245px;
-    width: 120px;
+    width: 151px;
 }
 .menu .cul_father{
     position: absolute;
@@ -219,7 +227,7 @@ header .navbar .menu
 .col1 input {
     width: 139px;
     height: 25px;
-    top: 16px;
+    top: 0px;
     padding-left: 30px;
     position: relative;
 }
@@ -230,7 +238,7 @@ header .navbar .menu
     left: 8px;
     width: 10px;
     height: 10px;
-
+    z-index: 50;
 }
 .col2 .buy{
     position: relative;
@@ -567,7 +575,7 @@ header .navbar .menu
     top: 0px;
     right: 50%;
     height: 40px;
-    background: url("images/ribon_left_menu.gif") no-repeat scroll left 0 #e71a0f;
+    background: url("../../images/ribon_left_menu.gif") no-repeat scroll left 0 #e71a0f;
     padding: 8px 15px 8px 30px;
     
 }
@@ -576,7 +584,7 @@ header .navbar .menu
     top: 0px;
     left:50%;
     height: 40px;
-    background: url("images/ribon_right.gif") no-repeat scroll right 0 #e71a0f;
+    background: url("../../images/ribon_right.gif") no-repeat scroll right 0 #e71a0f;
     padding: 10px 30px 8px 0px;
 }
 .event .last a{

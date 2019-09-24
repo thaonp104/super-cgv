@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/mystyle.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/detailFilm.css')}}">
     @yield('css')
@@ -22,6 +23,7 @@
     <div class="navbar">
         @if(Illuminate\Support\Facades\Auth::check())
             <div class="menu">
+                <a class="styleA upcase" href="/myAccount">XIN CHÀO, {{auth()->user()->name}}!</a>
                 <a href="#" class="styleA">TUYỂN DỤNG</a>
                 <a href="#" class="styleA">LIÊN HỆ CGV</a>
                 <a href="/logout" class="styleA">LOGOUT</a>
@@ -59,7 +61,7 @@
     <div class="header">
         <div class="content">
             <div class="symbol">
-                <a href="#">
+                <a href="/">
                     <img src="{{URL::asset('images/cgvlogo.png')}}" class="cgv">
                 </a>
             </div>
@@ -85,7 +87,7 @@
                         <div class="son rap">
                             <ul>
                                 <li>
-                                    <a href="#">Tất Cả Các Rạp <i class="	far fa-hand-point-right"></i></a>
+                                    <a href="/allCinemas/option">Tất Cả Các Rạp <i class="	far fa-hand-point-right"></i></a>
                                 </li>
                                 <li>
                                     <a href="#">Rạp Đặc Biệt <i class="	far fa-hand-point-right"></i></a>
