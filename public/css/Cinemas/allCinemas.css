@@ -269,11 +269,11 @@
 .product-collateral {
     clear: both;
 }
-.product-view .tabs-format-cgv > .toggle-tabs {
+.product-view .tabs-format-cgv > .toggle-tab {
     height: 40px;
     margin-bottom: 20px;
 }
-.product-collateral .toggle-tabs {
+.product-collateral .toggle-tab {
     text-align: center;
     background: transparent;
     border-width: medium;
@@ -281,26 +281,26 @@
     border-color: initial;
     border-image: initial;
 }
-.product-collateral .toggle-tabs {
+.product-collateral .toggle-tab {
     display: block;
     width: 100%;
     position: relative;
     /*background-color: rgb(244, 244, 244);*/
 }
-.product-collateral .toggle-tabs li:first-child {
+.product-collateral .toggle-tab li:first-child {
     border-left: none;
 }
 
-.product-view .tabs-format-cgv >.toggle-tabs> li:first-child {
+.product-view .tabs-format-cgv >.toggle-tab> li:first-child {
     background: url("../../images/bg-ribon-left-transparent.png") no-repeat scroll left top transparent;
     padding-left: 19px;
 }
-.tabs-format-cgv > .toggle-tabs > li.current > span {
+.tabs-format-cgv > .toggle-tab > li.current > span {
 
     white-space: nowrap;
     font-weight: bold;
 }
-.product-view .tabs-format-cgv > .toggle-tabs > li span {
+.product-view .tabs-format-cgv > .toggle-tab > li span {
     color: rgb(255, 255, 255);
     display: inline-block;
     background: right 16px no-repeat scroll rgb(231, 26, 15);
@@ -312,33 +312,33 @@
     padding-top: 10px;
     height: 40px;
 }
-.tabs-format-cgv > .toggle-tabs > li.current > span::before {
+.tabs-format-cgv > .toggle-tab > li.current > span::before {
     content: "";
     height: 40px;
     padding-left: 40px;
     background: url("../../images/bg-icon-finger.png") 5px 50% no-repeat scroll rgb(231, 26, 15);
 }
-.product-view .tabs-format-cgv >.toggle-tabs> li.last {
+.product-view .tabs-format-cgv >.toggle-tab> li.last {
     background: url("../../images/bg-ribon-right-transparent.png") no-repeat scroll right top transparent;
     padding-right: 19px;
     background-color: none;
 }
-.product-view .tabs-format-cgv >.toggle-tabs> li {
+.product-view .tabs-format-cgv >.toggle-tab> li {
     display: inline-block;
     clear: left;
     float: none;
     background-color: #e71a0f;
     height: 40px;
 }
-.tabs-format-cgv > .toggle-tabs > li.current{
+.tabs-format-cgv > .toggle-tab > li.current{
     position: relative;
     right: -5px;
 }
-.product-view .tabs-format-cgv>.toggle-tabs> li.last{
+.product-view .tabs-format-cgv>.toggle-tab> li.last{
     position: relative;
     left: -5px;
 }
-.product-view .tabs-format-cgv>.toggle-tabs> li.last span {
+.product-view .tabs-format-cgv>.toggle-tab> li.last span {
     background-image: none;
     background-color: #e71a0f;
     height: 40px;

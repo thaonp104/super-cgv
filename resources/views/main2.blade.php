@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/detailFilm.css')}}">
     @yield('css')
 
-    <script src="{{asset('js/jsDetailFilm.js')}}"></script>
+    <script src="{{URL::asset('js/jsDetailFilm.js')}}"></script>
 <!-- {{URL::asset('')}} -->
 </head>
 <body>
