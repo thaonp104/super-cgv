@@ -1,4 +1,8 @@
-@extends('main')
+@extends('main2')
+
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{asset('css/stylePayment.css')}}">
+@endsection
 
 @section('content')
     <div class="payment-online">

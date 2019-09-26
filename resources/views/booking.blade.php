@@ -1,5 +1,9 @@
 @extends('main')
 
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{asset('css/styleBooking.css')}}">
+@endsection
+
 @section('content')
 
     <div class="booking-online">

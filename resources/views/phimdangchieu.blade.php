@@ -1,5 +1,9 @@
 @extends('main')
 
+@section('css')
+    <link rel="stylesheet" type="text/css" href="{{asset('css/stylePhimDangChieu.css')}}">
+@endsection
+
 @section('content')
 
     <div id="fb-root"></div>

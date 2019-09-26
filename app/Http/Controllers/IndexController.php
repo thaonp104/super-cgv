@@ -23,13 +23,13 @@ class IndexController extends Controller
     public function detailFilm($id){
         $list = [];
         $day = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-        $today = date('d-m-20y');
+        $today = date('d-m-Y',now());
         for( $i = 0 ; $i <= 6 ; $i++ ){         //for từng ngày để tìm lịch chiếu
             if( $i == 0 )
                 $todayTime = strtotime($today);
             else
                 $todayTime = strtotime('+1 day', $today);
-            $today = date('d-m-20y',$todayTime);           // lấy ngày tháng hôm đó
+            $today = date('d-m-Y',$todayTime);           // lấy ngày tháng hôm đó
             $todayD = date('d',$todayTime);
             $todayM = date('m',$todayTime);
                 // tìm lịch chiếu của ngày đó
@@ -44,7 +44,7 @@ class IndexController extends Controller
                     $listSchedule = [];
                     $schedulej = $roomj->schedule()->get();             // lấy tất cả các lịch chiếu
                     foreach( $schedulej as $schedulet ){        // với mỗi lịch chiếu
-                        $date = date('d',$schedulet->date);
+                        $date = date('d',$schedulet->start_time);
                         if( $schedulet->film_id == $id && $date == $todayD ){     // điều kiện tìm lịch chiếu đang cần
                             $seat_taken = $schedulet->ticket()->count('Ticket.id');
                             $schedulet['seat_left'] = $roomj->total_seat - $seat_taken ;

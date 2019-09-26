@@ -1,4 +1,5 @@
 @extends('main2')
+
 @section('content')
     <div class="contentDetail">
         <div class="breadcrumbs">

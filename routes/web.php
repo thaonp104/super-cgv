@@ -25,18 +25,25 @@ Route::post('/saveAccount','indexController@saveAccount');
 
 Route::post('/login_result','indexController@login_result');
 
-// Route::get('/a', function () {
-//     $day = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-//     $today = date('d-m-20y');
-//     for( $i = 0 ; $i <= 6 ; $i++ ){
-//         if( $i == 0 ) $todayTime = strtotime($today);
-//         else $todayTime = strtotime('+1 day', $todayTime);
-//         $today = date('d-m-20y',$todayTime);
-//         $todayD = date('d',$todayTime);
-//         $todayM = date('m',$todayTime);
-//         echo $today.'<br>';
-//     }
-// });
+Route::get('/a', function () {
+    $day = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    $today = App\Schedule::select('start_time')->first();
+    // for( $i = 0 ; $i <= 6 ; $i++ ){
+    //     if( $i == 0 ) $todayTime = strtotime($today);
+    //     else $todayTime = strtotime('+1 day', $todayTime);
+    //     $today = date('d-m-20y',$todayTime);
+    //     $todayD = date('d',$todayTime);
+    //     $todayM = date('m',$todayTime);
+    //     echo $today.'<br>';
+    // }
+    
+    $t = date('d-m-Y',$today->start_time);
+    $tt = now(); 
+
+    echo "<pre>";
+    echo strtotime($tt);
+    echo "</pre>";
+});
 
 //Route::post('/login_result','indexController@login_result');
 
