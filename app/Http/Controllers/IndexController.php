@@ -8,6 +8,7 @@ use App\Cinema;
 use App\Client;
 use DB;
 use View;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 
 class IndexController extends Controller
@@ -22,17 +23,21 @@ class IndexController extends Controller
 
     public function detailFilm($id){
         $list = [];
-        $day = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-        $today = date('d-m-Y',now());
-        for( $i = 0 ; $i <= 6 ; $i++ ){         //for từng ngày để tìm lịch chiếu
-            if( $i == 0 )
-                $todayTime = strtotime($today);
-            else
-                $todayTime = strtotime('+1 day', $today);
-            $today = date('d-m-Y',$todayTime);           // lấy ngày tháng hôm đó
-            $todayD = date('d',$todayTime);
-            $todayM = date('m',$todayTime);
-                // tìm lịch chiếu của ngày đó
+        
+        for( $i = 0 ; $i <= 6 ; $i++ ){
+            $dt = Carbon::now();
+            $t = $dt->addDay($i);
+            $d = $t->day;
+            $m = $t->month;
+            $y = $t->year;
+            if( $t->dayOfWeek == 0 ) $day = "Sun";
+            if( $t->dayOfWeek == 1 ) $day = "Mon";
+            if( $t->dayOfWeek == 2 ) $day = "Tue";
+            if( $t->dayOfWeek == 3 ) $day = "Wed";
+            if( $t->dayOfWeek == 4 ) $day = "Thu";
+            if( $t->dayOfWeek == 5 ) $day = "Fri";
+            if( $t->dayOfWeek == 6 ) $day = "Sat";
+
             $listCinema = [];
             $film = Film::where('id',$id)->get();
 
@@ -45,7 +50,7 @@ class IndexController extends Controller
                     $schedulej = $roomj->schedule()->get();             // lấy tất cả các lịch chiếu
                     foreach( $schedulej as $schedulet ){        // với mỗi lịch chiếu
                         $date = date('d',$schedulet->start_time);
-                        if( $schedulet->film_id == $id && $date == $todayD ){     // điều kiện tìm lịch chiếu đang cần
+                        if( $schedulet->film_id == $id && $date == $d ){     // điều kiện tìm lịch chiếu đang cần
                             $seat_taken = $schedulet->ticket()->count('Ticket.id');
                             $schedulet['seat_left'] = $roomj->total_seat - $seat_taken ;
                             array_push($listSchedule,$schedulet);           
@@ -57,13 +62,12 @@ class IndexController extends Controller
                 $cinemai['rooms'] = $listRoom;
                 if( sizeof($listRoom) > 0 ) array_push($listCinema,$cinemai);
             }
-            $list[$i]['d'] = $todayD;
-            $list[$i]['m'] = $todayM;
-            $list[$i]['day'] = $day[$i];
+            $list[$i]['d'] = $d;
+            $list[$i]['m'] = $m;
+            $list[$i]['day'] = $day;
             $list[$i]['cinemas'] = $listCinema ;
-            
         }
-        //  dd($list) ;
+
         return view('detailFilm', ['film' => $film, 'list' => $list]);
     }
     

@@ -26,23 +26,7 @@ Route::post('/saveAccount','indexController@saveAccount');
 Route::post('/login_result','indexController@login_result');
 
 Route::get('/a', function () {
-    $day = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-    $today = App\Schedule::select('start_time')->first();
-    // for( $i = 0 ; $i <= 6 ; $i++ ){
-    //     if( $i == 0 ) $todayTime = strtotime($today);
-    //     else $todayTime = strtotime('+1 day', $todayTime);
-    //     $today = date('d-m-20y',$todayTime);
-    //     $todayD = date('d',$todayTime);
-    //     $todayM = date('m',$todayTime);
-    //     echo $today.'<br>';
-    // }
-    
-    $t = date('d-m-Y',$today->start_time);
-    $tt = now(); 
-
-    echo "<pre>";
-    echo strtotime($tt);
-    echo "</pre>";
+    // {{auth()->user()->name}}
 });
 
 //Route::post('/login_result','indexController@login_result');
@@ -51,9 +35,10 @@ Route::post('/login_result','AuthController@login');
 
 Route::group(['middleware'=>'clientRoute'],function (){
     Route::post('/payment', 'PaymentController@index');
-    Route::get('/booking/{cinema_id}/{room_id}/{schedule_id}/{film_id}/{cinema_name}/{room_name}/{seat_left}/{total_seat}/{start_time}/{end_time}/{date}','BookingController@index');
+    Route::get('/booking/{email}/{cinema_id}/{room_id}/{schedule_id}/{film_id}/{cinema_name}/{room_name}/{seat_left}/{total_seat}/{start_time}/{end_time}','BookingController@index');
     Route::get('/myAccount','AuthController@myAccount');
-    Route::get('/transactionHistory', 'AuthController@transactionHistory');                
+    Route::get('/transactionHistory', 'AuthController@transactionHistory');    
+    Route::post('/complete', 'CompleteController@complete');            
 });
 
 // Route::get('/ahihi', function () {

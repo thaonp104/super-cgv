@@ -7,16 +7,18 @@ use App\Film;
 use App\Room;
 use App\Schedule;
 use App\Cinema;
+use App\Client;
 use DB;
 use View;
 use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
-    public function index( $cinema_id, $room_id, $schedule_id, $film_id, $cinema_name, 
+    public function index( $idClient, $cinema_id, $room_id, $schedule_id, $film_id, $cinema_name, 
                             $room_name, $seat_left, $total_seat, $start_time,
-                            $end_time, $date ){
-        $date = date('d/m/20y',$date);
+                            $end_time){
+        
+        $date = date('d/m/Y',$start_time);
         $data = Film::where('id',$film_id)->get();
         
         $seat = Room::find($room_id)->first()->seat()->get();
@@ -367,8 +369,8 @@ class BookingController extends Controller
                 1 => 'sw',
             ),
         );
-        return view('booking', compact('data','seat','seat_taken','map','map_type', 
-                    'cinema_name', 'room_name', 'seat_left', 'total_seat',
+        return view('booking', compact('idClient','data','seat','seat_taken','map','map_type', 
+                    'cinema_name', 'room_name', 'seat_left', 'total_seat', 'schedule_id',
                     'start_time', 'end_time', 'date'));
     }
 

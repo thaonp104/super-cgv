@@ -11,7 +11,7 @@
         <div class="seat-header">
             <div class="cinema-info">
                 <span><b>{{ $cinema_name }} | Cinema {{ $room_name }} | Số ghế (<i>{{ $seat_left }}</i>/{{ $total_seat }})</b></span>
-                <div><b>{{ $date }} {{ $start_time }} ~ {{ $date }} {{ $end_time }}</b></div>
+                <div><b>{{ $date }} {{ date('h:m',$start_time) }} ~ {{ $date }} {{ date('h:m',$end_time) }}</b></div>
             </div>
         </div>
         <div class="booking-container">
@@ -134,6 +134,11 @@
                     </button>
                     <div class="format-bg-bottom"></div>
                 </div>
+
+                <input type="text" name="paymentDate" value="{{ date('d-m-Y',$start_time) }}">
+                <input type="text" name="client_id" value="{{ $idClient }}">
+                <input type="text" name="schedule_id" value="{{ $schedule_id }}">
+
             </form>
         </div>
     </div>

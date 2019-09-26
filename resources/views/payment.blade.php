@@ -1,13 +1,15 @@
-@extends('main2')
+@extends('main')
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylePayment.css')}}">
 @endsection
 
 @section('content')
+
     <div class="payment-online">
         <div class="payment-header"><b>THANH TOÁN</b></div>
 <form action="/complete" method="POST">
+    @csrf
         <div class="payment-container">
             <div class="col1">
                 <div class="step">
@@ -16,7 +18,7 @@
                             <span>Bước 1: </span>
                             <h5>Giảm giá</h5>
                         </div>
-                        {{-- <div class="datlai">Đặt lại</div> --}}
+                        <div class="datlai">Đặt lại</div>
                     </div>
                     <div class="step1-container">
                         <div class="cgv-point" onclick="cgvPoint()">Điểm CGV/ Thẻ quà tặng</div>
@@ -25,12 +27,12 @@
                                 <div class="header">
                                     <h6>Điểm CGV</h6>
                                 </div>
-                                <form action="">
+                                <div>
                                     <div>Bạn có: 0 P</div>
                                     <input type="text">
                                     <div class="su-dung">Sử dụng</div>
                                     <input type="checkbox">Sử dụng hết
-                                </form>
+                                </div>
                                 <div class="giamgia">Giảm giá: <b>0,00 ₫</b></div>
                             </div>
                             <div class="the-qua-tang">
@@ -38,12 +40,12 @@
                                     <h6>Thẻ quà tặng</h6>
                                     <div class="dang-ky">Đăng ký</div>
                                 </div>
-                                <form action="">
+                                <div>
                                     <div>Bạn có: 0,00 ₫</div>
                                     <input type="text">
                                     <div class="su-dung">Sử dụng</div>
                                     <input type="checkbox">Sử dụng hết
-                                </form>
+                                </div>
                                 <div class="giamgia">Giảm giá: <b>0,00 ₫</b></div>
                             </div>
                         </div>
@@ -98,11 +100,11 @@
                             </div>
                             <div class="uu-dai">
                                 <div class="tieu-de">Mua 2 vé xem phim bằng thẻ VPBank chỉ trả tiền 1 vé</div>
-                                <form action="">
+                                <div>
                                     <b>Verify code</b>
                                     <input type="text" class="vpbank-code">
                                     <div class="su-dung">Sử dụng</div>
-                                </form>
+                                </div>
                                 <b>Mua 2 vé xem phim bằng thẻ VPBank chỉ trả tiền 1 vé</b>
                                 <p>- Khách hàng khi thỏa điều kiện sẽ được tặng 1 mã code do VPBank cung cấp cho khách hàng</p>
                                 <p>- Khách hàng sử dụng mã code, mua online 2 vé xem phim 2D,  thanh toán bằng thẻ VPBank quy định của chương trình, chỉ cần trả tiền 1 vé với giá là 80.000 vnd</p>
@@ -114,11 +116,11 @@
                         </div>
                         <div class="promotion-code" onclick="promotionCode()">Mã khuyến mãi</div>
                         <div class="under-promotion-code">
-                            <form action="">
+                            <div>
                                 <div><b>Nhập mã khuyến mãi</b></div>
                                 <input type="text">
                                 <div class="su-dung">Sử dụng</div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -206,6 +208,17 @@
             </div>
         </div>
 
+
+
+
+
+
+
+
+
+
+
+        
         <div class="booking-info">
             <div class="format-bg-top"></div>
             <div class="booking-info-container">
@@ -254,12 +267,24 @@
                     </li>
                 </ul>
                 
-                <button type="submit" class="btn-payment" onclick="pay()"></button>
+                <button type="submit" class="btn-payment"></button>
                 
                
             </div>
             <div class="format-bg-bottom"></div>
         </div>
+
+        <input type="text" name="paymentDate" value="{{ $_POST['paymentDate'] }}">
+        <input type="text" name="paymentType" value="online">
+            <input type="text" name="quantity" value="">
+        <input type="text" name="client_id" value="{{ $_POST['client_id'] }}">
+        <input type="text" name="member_id" value="2">
+
+        <input type="text" name="price" value="{{ $_POST['sumCost'] }}">
+        <input type="text" name="schedule_id" value="{{ $_POST['schedule_id'] }}">
+        <input type="text" name="seats" value="{{ $_POST['seat-detail'] }}">
+
+        {{-- <button type="submit" class="btn-booking-next" name="btn-next"> --}}
 </form>
     </div>
 

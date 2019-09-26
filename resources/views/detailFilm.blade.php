@@ -156,8 +156,8 @@
                                 @foreach ($cinema->rooms as $room)
                                     @foreach ($room->schedules as $schedule)
                                         <li class="item">
-                                            <a href="/booking/{{ $cinema->id }}/{{ $room->id }}/{{ $schedule->id }}/{{ $film[0]->id }}/{{ $cinema->name }}/{{ $room->name }}/{{ $schedule['seat_left'] }}/{{ $room->total_seat }}/{{ $schedule->start_time }}/{{ $schedule->end_time }}/{{ $schedule->date }}">
-                                                <span>{{ $schedule->start_time }}</span><br>
+                                            <a href="/booking/{{ Auth::user()->id }}/{{ $cinema->id }}/{{ $room->id }}/{{ $schedule->id }}/{{ $film[0]->id }}/{{ $cinema->name }}/{{ $room->name }}/{{ $schedule['seat_left'] }}/{{ $room->total_seat }}/{{ $schedule->start_time }}/{{ $schedule->end_time }}">
+                                                <span>{{ date('h:m',$schedule->start_time) }}</span><br>
                                                 <span>{{ $schedule['seat_left'] }} ghế trống</span>
                                             </a>
                                         </li>
