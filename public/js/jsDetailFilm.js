@@ -7,8 +7,8 @@ $(document).ready(function () {
     }
     window.dayClick = function(d){
         $('.current').removeClass('current');
+        $('#const').addClass('current');
         d.className += ' current';
-
         if(d.id == '1'){
             $('.show').removeClass('show');
             $('#day1').addClass('show');

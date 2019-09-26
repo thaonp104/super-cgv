@@ -206,12 +206,12 @@
             </div>
 
             <div class="product-collateral toggle-content tabs tabs-format-cgv">
-                <ul class="toggle-tabs">
-                    <li class="current">
+                <ul class="toggle-tab">
+                    <li class="current" id="const" style="cursor: pointer">
                         <span>Lịch chiếu</span>
                     </li>
                     <li><span style="padding: 10px 0px">|</span></li>
-                    <li class="last">
+                    <li class="last" style="cursor: pointer;">
                         <span>Giá vé</span>
                     </li>
                 </ul>
@@ -220,186 +220,69 @@
                         <div class="tab-content">
                             <div class="product-collateral tabs tabs-cgv-showtimes">
                                 <ul class="toggle-tabs">
-                                    @for($i=0; $i<=6; $i++)
-{{--                                        @if( $i==0)--}}
-                                            <li id="{{$i}}" onclick="dayClick(this)">
-                                                <div class="day">
-                                                    <span>{{$ms[$i]}}</span>
-                                                    <em>{{$days[$i]}}</em>
-                                                    <strong>{{$ds[$i]}}</strong>
-                                                </div>
-                                            </li>
+                                    @for($i=1; $i<=7; $i++)
+                                        <li id="{{$i}}" onclick="dayClick(this)">
+                                            <div class="day">
+                                                <span>{{$ms[$i-1]}}</span>
+                                                <em>{{$days[$i-1]}}</em>
+                                                <strong>{{$ds[$i-1]}}</strong>
+                                            </div>
+                                        </li>
                                     @endfor
                                 </ul>
                                 <dl id="collateral-tabs" class="collateral-tabs">
                                     <dd class="tab-container current">
                                         <div class="tab-content cgv-sites-schedule">
-                                            @foreach($films as $film)
-                                                <div class="film-list">
-                                                    <div class="film-label">
-                                                        <h3>
-                                                            <a href="#"
-                                                               title="{{$film->name}}" class="upcase">
-                                                                {{$film->name}}<span class="movie_rating {{$film->rate}}">
-																		C18																	</span>
-                                                            </a>
-                                                        </h3>
-                                                    </div>
+                                        <?php $i=1; ?>
+                                            @foreach( $arr_date as $films )
+                                                <div class="cinemas" id="day{{ $i++ }}" style="display: none">
+                                                    @foreach($films as $film)
+                                                        <div class="cinema_child" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid black">
+                                                            <div class="film-label">
+                                                                <h3>
+                                                                    <a href="#"
+                                                                       title="{{$film->name}}" class="upcase">
+                                                                        {{$film->name}}
+                                                                        <span class="movie_rating {{$film->rated}}">
+                                                                            C18
+                                                                        </span>
+                                                                    </a>
+                                                                </h3>
+                                                            </div>
 
-                                                    <div class="film-left">
-                                                        <div class="film-poster">
-                                                            <a href="#"
-                                                               title="{{$film->name}}">
-                                                                <img
-                                                                    src="{{URL::asset($film->image)}}"
-                                                                    alt="{{$film->name}}" style="width: 176px; height: 260px">
-                                                            </a>
+                                                            <div class="film-left">
+                                                                <div class="film-poster">
+                                                                    <a href="#"
+                                                                       title="{{$film->name}}">
+                                                                        <img
+                                                                            src="{{URL::asset($film->image)}}"
+                                                                            alt="{{$film->name}}" style="width: 176px; height: 260px">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="film-right">
+                                                                <strong class="film-screen std">
+                                                                    2D Phụ Đề Việt </strong>
+
+                                                                <div class="film-showtimes">
+                                                                    <ul class="products-grid-movie tab-showtime">
+                                                                        @foreach($film->schedules as $schedule)
+                                                                            <li class="item">
+                                                                                <a href="#">
+                                                                                    <span>
+                                                                                        <i class="hrzone3"></i>
+                                                                                         {{$schedule->start_time}}
+                                                                                    </span><br>
+                                                                                    <span>216 ghế trống</span>
+                                                                                </a>
+                                                                            </li>
+                                                                        @endforeach
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-
-                                                    <div class="film-right">
-                                                        <strong class="film-screen std">
-                                                            2D Phụ Đề Việt </strong>
-
-                                                        <div class="film-showtimes">
-                                                            <ul class="products-grid-movie tab-showtime">
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777975/dy/20190909">
-																							<span>
-																								<i class="hrzone3"></i>
-																																																	16:00 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>216 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777966/dy/20190909">
-																							<span>
-																								<i class="hrzone3"></i>
-																																																	16:40 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>214 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777961/dy/20190909">
-																							<span>
-																								<i class="hrzone4"></i>
-																																																	17:20 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>123 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777956/dy/20190909">
-																							<span>
-																								<i class="hrzone4"></i>
-																																																	18:00 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>145 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777976/dy/20190909">
-																							<span>
-																								<i class="hrzone4"></i>
-																																																	19:20 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>208 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777967/dy/20190909">
-																							<span>
-																								<i class="hrzone4"></i>
-																																																	20:00 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>212 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777962/dy/20190909">
-																							<span>
-																								<i class="hrzone4"></i>
-																																																	20:40 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>117 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777957/dy/20190909">
-																							<span>
-																								<i class="hrzone4"></i>
-																																																	21:20 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>149 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777977/dy/20190909">
-																							<span>
-																								<i class="hrzone6"></i>
-																																																	22:40 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>216 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <strong class="film-screen lamour">
-                                                            2D Phụ Đề Việt | Rạp Lamour </strong>
-
-                                                        <div class="film-showtimes">
-                                                            <ul class="products-grid-movie tab-showtime">
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777970/dy/20190909">
-																							<span>
-																								<i class="hrzone3"></i>
-																																																	15:20 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>28 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777972/dy/20190909">
-																							<span>
-																								<i class="hrzone5"></i>
-																																																	22:00 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>30 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <strong class="film-screen lamour">
-                                                            2D Phụ Đề Hàn &amp; Việt | Rạp Lamour </strong>
-
-                                                        <div class="film-showtimes">
-                                                            <ul class="products-grid-movie tab-showtime">
-                                                                <li class="item">
-                                                                    <a href="https://www.cgv.vn/default/cinemas/booking/tickets/site/008/seq/3777971/dy/20190909">
-																							<span>
-																								<i class="hrzone4"></i>
-																																																	18:40 PM																																															</span><br>
-
-                                                                        <!-- Print seat Left -->
-                                                                        <span>26 ghế trống</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+                                                    @endforeach
                                                 </div>
                                             @endforeach
                                         </div>

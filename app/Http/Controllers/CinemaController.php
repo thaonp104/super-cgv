@@ -16,12 +16,49 @@ use Carbon\Carbon;
 
 class CinemaController extends Controller
 {
+    // trả về danh sách id của các room của rạp có id là $cinema
+    public function arr_room_id($cinema){
+        $arr_room_id = Room::where('cinema_id', $cinema)
+            ->select('id')
+            ->get();
+        return $arr_room_id;
+    }
+
+    // trả về danh sách các room của rạp có id là $cinema
+    public function arr_room($cinema){
+        $arr_room = Room::where('cinema_id', $cinema)->get();
+        return $arr_room;
+    }
+
+    // trả về ds các schedule của các arr_room của 1 ngày
+    public function arr_schedule($arr_room_id, $date1, $date2, $film_id){
+        $arr_schedule = Schedule::whereIn('room_id',$arr_room_id)
+            ->where('film_id', $film_id)
+            ->whereBetween('start_time', [strtotime($date1), strtotime($date2)-1])->get();
+        foreach($arr_schedule as $schedule){
+            $schedule->start_time = date("h:i", $schedule->start_time);
+        }
+        return $arr_schedule;
+    }
+
+    // trả về ds id của film có trong ds schedule
+    public function arr_film_id($arr_room_id, $date1, $date2){
+        $arr_film_id = Schedule::whereIn('room_id',$arr_room_id)
+            ->whereBetween('start_time', [strtotime($date1), strtotime($date2)-1])
+            ->select('film_id')
+            ->get();
+        return $arr_film_id;
+    }
+
+    // trả về ds film có trong ds schedule
+    public function arr_film($arr_film_id){
+        $arr_film = Film::whereIn('id',$arr_film_id)->get();
+        return $arr_film;
+    }
+
+    // Hàm xử lí chính
     public function allCinemas($cinema){
-//        $schedule = Schedule::where('id',1)->first();
-//        $st = $schedule->start_time;
-//        $et = $schedule->end_time;
-//        return date('h:i:s d:m:Y', $st)."-".date('h:i:s d:m:Y', $et);
-//        return strtotime('19-09-2019');
+//        return date("h:i:s", 1569714461);
         $dates = []; $i=0;
         $days = [];
         $d = [];
@@ -43,33 +80,33 @@ class CinemaController extends Controller
             else if($day == 0) $days[$i]= 'Sun';
             $i++;
         }
-
+        $dt = Carbon::now()->addDay(7);
+        $dates[7] = $dt->toDateString();
         //thứ tự trong danh sách khớp với nhau ở từng vị trí
 
+
+
+        //kết thúc
+
+        $data['rooms'] = $this->arr_room($cinema);
+        $data['result'] = $cinema;
+        $data['cinemas'] = Cinema::all();
+        for($i=0; $i<=6; $i++){
+            $films = $this->arr_film($this->arr_film_id($this->arr_room_id($cinema),$dates[$i], $dates[$i+1]));
+            foreach ($films as $film){
+//                dd($film);
+                $schedules = $this->arr_schedule($this->arr_room_id($cinema),$dates[$i], $dates[$i+1], $film->id);
+                $film["schedules"] = $schedules;
+            }
+//            dd($films);
+            $arr_date[$i] = $films;
+//            dd($arr_date[$i]);
+        }
         $data['dates']= $dates; //danh sách các ngày theo định dang "Y-m-d"
         $data['days']= $days; //danh sách các thứ trong tuần tương ứng với các ngày
         $data['ds'] = $d; //danh sách các ngày trong tháng
         $data['ms']= $m; // dánh sách các tháng tương ứng với ngày
-
-        //kết thúc
-
-        $data['rooms'] = Room::where('cinema_id', $cinema)->get();
-        $data['result'] = $cinema;
-        $data['cinemas'] = Cinema::all();
-
-        $room_ids = Room::where('cinema_id', $cinema)
-            ->select('id')
-            ->get();
-        $data['schedules'] = Schedule::whereIn('room_id',$room_ids)
-            ->whereBetween('start_time', [strtotime($dates[0]), strtotime($dates[6])])->get();
-        $film_ids = Schedule::whereIn('room_id',$room_ids)
-            ->whereBetween('start_time', [strtotime($dates[0]), strtotime($dates[6])])
-            ->select('film_id')
-            ->get();
-        $data['films'] = Film::whereIn('id',$film_ids)->get();
-//        $data['seats'] = Seat::all();
-//        $data['tickets'] = Ticket::all();
-//        $data['bills'] = Bill::all();
+        $data['arr_date'] = $arr_date;
 
         return view('Cinemas.allCinemas',$data);
     }
