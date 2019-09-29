@@ -19,37 +19,22 @@ Route::get('/','indexController@index');
 
 Route::get('/detailFilm/{id}','indexController@detailFilm');
 
+Route::get('/booking/{cinema_id}/{room_id}/{schedule_id}/{film_id}/{cinema_name}/{room_name}/{seat_left}/{total_seat}/{start_time}/{end_time}','BookingController@index');
+
 Route::get('/logout','AuthController@logout');
 
 Route::post('/saveAccount','indexController@saveAccount');
 
 Route::post('/login_result','indexController@login_result');
 
-Route::get('/a', function () {
-    // {{auth()->user()->name}}
-});
-
-//Route::post('/login_result','indexController@login_result');
-
 Route::post('/login_result','AuthController@login');
 
 Route::group(['middleware'=>'clientRoute'],function (){
     Route::post('/payment', 'PaymentController@index');
-    Route::get('/booking/{email}/{cinema_id}/{room_id}/{schedule_id}/{film_id}/{cinema_name}/{room_name}/{seat_left}/{total_seat}/{start_time}/{end_time}','BookingController@index');
     Route::get('/myAccount','AuthController@myAccount');
     Route::get('/transactionHistory', 'AuthController@transactionHistory');    
-    Route::post('/complete', 'CompleteController@complete');            
+    Route::post('/complete', 'CompleteController@complete');   
 });
-
-// Route::get('/ahihi', function () {
-//     $d = now()->getTimestamp();
-//     $dd = date('d-m-y',$d);
-
-//     echo "<pre>";
-//     echo $dd->strtotime();
-//     echo "</pre>";
-// });
-    
 
 Route::group(['middleware'=>'RedirectMyAccount'],function (){
     Route::get('/login','indexController@login');

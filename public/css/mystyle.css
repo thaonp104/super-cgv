@@ -37,6 +37,7 @@ header .navbar .menu
     width: 980px;
     margin: 0 auto;
     padding-top: 5px;
+    background: none;
 }
 .navbar .menu a{
     margin-right: 20px;
@@ -886,4 +887,7 @@ header .navbar .menu
     cursor: pointer;
     z-index: 99999;
     float: none!important;
+}
+.hidden{
+    display: none;
 }

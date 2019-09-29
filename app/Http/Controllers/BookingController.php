@@ -8,21 +8,22 @@ use App\Room;
 use App\Schedule;
 use App\Cinema;
 use App\Client;
+use App\Ticket;
 use DB;
 use View;
 use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
-    public function index( $idClient, $cinema_id, $room_id, $schedule_id, $film_id, $cinema_name, 
+    public function index( $cinema_id, $room_id, $schedule_id, $film_id, $cinema_name, 
                             $room_name, $seat_left, $total_seat, $start_time,
                             $end_time){
         
         $date = date('d/m/Y',$start_time);
-        $data = Film::where('id',$film_id)->get();
+        $f = Film::find($film_id);
         
-        $seat = Room::find($room_id)->first()->seat()->get();
-        $seat_taken = Schedule::find($schedule_id)->first()->seat()->get();
+        $seat = Room::find($room_id)->seat()->get();
+        $seat_taken = Schedule::find($schedule_id)->seat()->get();
         
         $map = array(
             1 => array(
@@ -369,7 +370,7 @@ class BookingController extends Controller
                 1 => 'sw',
             ),
         );
-        return view('booking', compact('idClient','data','seat','seat_taken','map','map_type', 
+        return view('booking', compact('f','seat','seat_taken','map','map_type', 
                     'cinema_name', 'room_name', 'seat_left', 'total_seat', 'schedule_id',
                     'start_time', 'end_time', 'date'));
     }

@@ -197,10 +197,11 @@ body{
 .fa-mua-ve{
     background: #e71a0f;
     width: 93px;
-    height: 31px;
+    height: 34px;
     padding: 2px 1px;
     border-radius: 5px;
     float: right;
+    cursor: pointer;
 }
 .mua-ve{
     color: white;
@@ -210,14 +211,10 @@ body{
     padding: 5px;
     padding-left: 25px;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 15px;
     background: url(../images/bg-cate-booking.png) no-repeat scroll left center rgba(0, 0, 0, 0);
 }
-
-
-
-
 
 /* FOOTER */
 .footer{
@@ -376,4 +373,37 @@ body{
     height: 120px;
     width: 100%;
 }
+.hidden{
+    display: none;
+}
 /* END OF FOOTER */ 
+/*start mua ve*/
+.modal-open .modal {
+    visibility: visible;
+    top: 40px;
+    left: 81px;
+    position: fixed;
+    width: 1187px;
+    height: 550px;
+    border: 5px solid #000;
+    background: #fdfcf0;
+}
+.content-modal .date ul.toggle-tabs li {
+    width: 81px;
+    margin: 0;
+}
+#cboxClose{
+    position: fixed;
+    /* top: 0px; */
+    /* right: 0px; */
+    top: 42px;
+    right: 115px;
+    display: block;
+    background: url(../images/controls.png) no-repeat top center;
+    width: 38px;
+    height: 19px;
+    text-indent: -9999px;
+    border: none;
+    z-index: 1000;
+}
+/*end mua ve*/

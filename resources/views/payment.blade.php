@@ -18,7 +18,6 @@
                             <span>Bước 1: </span>
                             <h5>Giảm giá</h5>
                         </div>
-                        <div class="datlai">Đặt lại</div>
                     </div>
                     <div class="step1-container">
                         <div class="cgv-point" onclick="cgvPoint()">Điểm CGV/ Thẻ quà tặng</div>
@@ -134,31 +133,31 @@
                     <div class="step-container">
 
                         <label class="method atm-card">
-                            <input type="radio" name="radio" value="atm" onclick="atmCard()">
+                            <input type="radio" required name="typeOfPayment" value="atm" onclick="atmCard()">
                             <span class="img atm-img"></span>
                             <span class="method-name">ATM card (Thẻ nội địa)</span>
                         </label>
 
                         <label class="method international-card">
-                            <input type="radio" name="radio" value="international" onclick="internationalCard()">
+                            <input type="radio" required name="typeOfPayment" value="international" onclick="internationalCard()">
                             <span class="img international-img"></span>
                             <span class="method-name">Thẻ quốc tế (Visa, Master, Amex, JCB)</span>
                         </label>
 
                         <label class="method momo">
-                            <input type="radio" name="radio" value="momo" onclick="momo()">
+                            <input type="radio" required name="typeOfPayment" value="momo" onclick="momo()">
                             <span class="img momo-img"></span>
                             <span class="method-name">Ví MoMo 2 vé x 9k/vé KH mới & 79k/vé KH Bạc -T6,T7,CN</span>
                         </label>
 
                         <label class="method zalopay">
-                            <input type="radio" name="radio" value="zalopay" onclick="zaloPay()">
+                            <input type="radio" required name="typeOfPayment" value="zalopay" onclick="zaloPay()">
                             <span class="img zalopay-img"></span>
                             <span class="method-name">ZaloPay 1k/1 vé, 59k/2 vé cho KH mới & 79k/vé x2 cho KH cũ (từ T5-CN)</span>
                         </label>
 
                         <label class="method airpay">
-                            <input type="radio" name="radio" value="airpay" onclick="airPay()">
+                            <input type="radio" required name="typeOfPayment" value="airpay" onclick="airPay()">
                             <span class="img airpay-img"></span>
                             <span class="method-name">Ví điện tử AirPay</span>
                         </label>
@@ -166,7 +165,7 @@
                     </div>
                 </div>
                 <div class="iaccept">
-                    <input type="checkbox" id="iaccept">
+                    <input type="checkbox" required id="iaccept">
                     <span class="iaccept-name">Tôi đồng ý với điều khoản sử dụng và mua vé cho người có độ tuổi phù hợp</span>
                 </div>
             </div> 
@@ -208,17 +207,6 @@
             </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-        
         <div class="booking-info">
             <div class="format-bg-top"></div>
             <div class="booking-info-container">
@@ -226,7 +214,7 @@
                 <ul class="info">
                     <li class="film-info dot">
                         <div class="middle">
-                            <div class="film-info-th"><img src="https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/dc33889b0f8b5da88052ef70de32f1cb/s/m/smffh-localized_aw-vn-poster_6-3up_triangle_2.jpg" alt=""></div>
+                            <div class="film-info-th"><img src="{{ $_POST['image'] }}" alt=""></div>
                             <div class="film-info-td">
                                 <div class="film-name">{{ $_POST['film-name'] }}</div>
                                 <div class="film-format">2D</div>
@@ -267,25 +255,22 @@
                     </li>
                 </ul>
                 
-                <button type="submit" class="btn-payment"></button>
+                <button type="submit" class="btn-payment" onclick="pay()"></button>
                 
                
             </div>
             <div class="format-bg-bottom"></div>
         </div>
 
-        <input type="text" name="paymentDate" value="{{ $_POST['paymentDate'] }}">
-        <input type="text" name="paymentType" value="online">
-            <input type="text" name="quantity" value="">
-        <input type="text" name="client_id" value="{{ $_POST['client_id'] }}">
-        <input type="text" name="member_id" value="2">
+        <div class="hidden">
+            <input type="text" name="paymentDate" value="{{ $_POST['paymentDate'] }}">
+            <input type="text" name="client_id" value="{{ Auth::user()->id }}">
+            <input type="text" name="member_id" value="2">
 
-        <input type="text" name="price" value="{{ $_POST['sumCost'] }}">
-        <input type="text" name="schedule_id" value="{{ $_POST['schedule_id'] }}">
-        <input type="text" name="seats" value="{{ $_POST['seat-detail'] }}">
-
-        {{-- <button type="submit" class="btn-booking-next" name="btn-next"> --}}
+            <input type="text" name="price" value="{{ $_POST['sumCost'] }}">
+            <input type="text" name="schedule_id" value="{{ $_POST['schedule_id'] }}">
+            <input type="text" name="seats" value="{{ $_POST['seat-detail'] }}">
+        </div>
 </form>
     </div>
-
 @endsection

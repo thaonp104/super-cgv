@@ -92,42 +92,40 @@
                     <div class="format-bg-top"></div>
                     <div class="btn-prev"></div>
                     <ul class="info">
-                        @foreach( $data as $f )
-                            <li class="film-info">
-                            <div class="film-info-th"><img src="{{URL::asset($f->image)}}" alt=""></div>
-                                <div class="film-info-td">
-                                    <input type="text" class="film-name" name="film-name" id="film-name" value="{{$f -> name}}" disabled>
-                                    <div class="film-format">2D</div>
-                                    <input type="text" class="film-age-limit" name="film-age-limit" id="film-age-limit" value="{{$f -> rated}}" disabled>
-                                </div>
-                            </li>
-                            <li class="when-info">
-                                <div class="when-info-th">
-                                    <div class="cinema">Rạp chiếu phim</div>
-                                    <div class="date">Ngày</div>
-                                    <div class="room">Phòng chiếu</div>
-                                    <div id="seat-info">Ghế</div>
-                                </div>
-                                <div class="when-info-td">
-                                    <input type="text" class="cinema-detail" name="cinema-detail" id="cinema-detail" value="{{ $cinema_name }}" disabled>
-                                    <input type="text" class="date-detail" name="date-detail" id="date-detail" value="{{ $date }}" disabled>
-                                    <input type="text" class="room-detail" name="room-detail" id="room-detail" value="Cinema {{ $room_name }}" disabled>
-                                    <input type="text" id="seat-detail" name="seat-detail" disabled>
-                                </div>
-                            </li>
-                            <li class="cost-info">
-                                <div class="cost-info-th">
-                                    <div class="film">Phim</div>
-                                    <div class="combo">Combo</div>
-                                    <div class="sum">Tổng</div>
-                                </div>
-                                <div class="cost-info-td">
-                                    <input type="text" id="film-cost" name="filmCost" value="0,00 ₫" disabled>
-                                    <input type="text" id="combo-cost" value="0,00 ₫" disabled>
-                                    <input type="text" id="sum-cost" name="sumCost" value="0,00 ₫" disabled>
-                                </div>
-                            </li>
-                        @endforeach
+                        <li class="film-info">
+                        <div class="film-info-th"><img src="{{URL::asset($f->image)}}" alt=""></div>
+                            <div class="film-info-td">
+                                <input type="text" class="film-name" name="film-name" id="film-name" value="{{$f -> name}}" disabled>
+                                <div class="film-format">2D</div>
+                                <input type="text" class="film-age-limit" name="film-age-limit" id="film-age-limit" value="{{$f -> rated}}" disabled>
+                            </div>
+                        </li>
+                        <li class="when-info">
+                            <div class="when-info-th">
+                                <div class="cinema">Rạp chiếu phim</div>
+                                <div class="date">Ngày</div>
+                                <div class="room">Phòng chiếu</div>
+                                <div id="seat-info">Ghế</div>
+                            </div>
+                            <div class="when-info-td">
+                                <input type="text" class="cinema-detail" name="cinema-detail" id="cinema-detail" value="{{ $cinema_name }}" disabled>
+                                <input type="text" class="date-detail" name="date-detail" id="date-detail" value="{{ $date }}" disabled>
+                                <input type="text" class="room-detail" name="room-detail" id="room-detail" value="Cinema {{ $room_name }}" disabled>
+                                <input type="text" id="seat-detail" name="seat-detail" disabled>
+                            </div>
+                        </li>
+                        <li class="cost-info">
+                            <div class="cost-info-th">
+                                <div class="film">Phim</div>
+                                <div class="combo">Combo</div>
+                                <div class="sum">Tổng</div>
+                            </div>
+                            <div class="cost-info-td">
+                                <input type="text" id="film-cost" name="filmCost" value="0,00 ₫" disabled>
+                                <input type="text" id="combo-cost" value="0,00 ₫" disabled>
+                                <input type="text" id="sum-cost" name="sumCost" value="0,00 ₫" disabled>
+                            </div>
+                        </li>
                     </ul>
                     <button type="submit" class="btn-booking-next" name="btn-next" onclick="ableInput()">
                         <span class="btn-next"></span>
@@ -135,10 +133,11 @@
                     <div class="format-bg-bottom"></div>
                 </div>
 
-                <input type="text" name="paymentDate" value="{{ date('d-m-Y',$start_time) }}">
-                <input type="text" name="client_id" value="{{ $idClient }}">
-                <input type="text" name="schedule_id" value="{{ $schedule_id }}">
-
+                <div class="hidden">
+                    <input type="text" name="paymentDate" value="{{ date('d-m-Y',$start_time) }}">
+                    <input type="text" name="schedule_id" value="{{ $schedule_id }}">
+                    <input type="text" name="image" value="{{URL::asset($f->image)}}">
+                </div>
             </form>
         </div>
     </div>
