@@ -269,7 +269,7 @@
                                                                     <ul class="products-grid-movie tab-showtime">
                                                                         @foreach($film->schedules as $schedule)
                                                                             <li class="item">
-                                                                                <a href="#">
+                                                                                <a href="/booking/{{ $result }}/{{ $schedule->room_id }}/{{ $schedule->id }}/{{ $schedule->film_id }}/name_cinema/name_room/{{129}}/{{129}}/{{ $schedule->st }}/{{ $schedule->end_time }}">
                                                                                     <span>
                                                                                         <i class="hrzone3"></i>
                                                                                          {{$schedule->start_time}}

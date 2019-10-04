@@ -36,6 +36,7 @@ class CinemaController extends Controller
             ->where('film_id', $film_id)
             ->whereBetween('start_time', [strtotime($date1), strtotime($date2)-1])->get();
         foreach($arr_schedule as $schedule){
+            $schedule['st'] = $schedule->start_time;
             $schedule->start_time = date("h:i", $schedule->start_time);
         }
         return $arr_schedule;

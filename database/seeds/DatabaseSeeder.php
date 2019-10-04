@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(FilmSeeder::class);
         $this->call(RoomSeeder::class);
         $this->call(ScheduleSeeder::class);
-        // $this->call(BillSeeder::class);
+         $this->call(BillSeeder::class);
         $this->call(SeatSeeder::class);
-        // $this->call(TicketSeeder::class);
+         $this->call(TicketSeeder::class);
     }
 }

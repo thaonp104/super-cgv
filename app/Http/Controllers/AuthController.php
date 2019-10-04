@@ -44,7 +44,7 @@ class AuthController extends Controller
         return view('MyAccount.myAccount', $data);
     }
     public  function transactionHistory(){
-        $data['bills'] = Bill::where('client_id',\auth()->user()->id)->get();
+        $data['bills'] = Bill::where('client_id',\auth()->user()->id)->orderBy('id','desc')->paginate(5);
         $data['tickets'] = Ticket::all();
         $data['seats'] = Seat::all();
         $data['schedules'] = Schedule::all();
