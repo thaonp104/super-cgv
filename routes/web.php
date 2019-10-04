@@ -30,10 +30,10 @@ Route::post('/login_result','indexController@login_result');
 Route::post('/login_result','AuthController@login');
 
 Route::group(['middleware'=>'clientRoute'],function (){
-    Route::post('/payment', 'PaymentController@index');
+    Route::post('/payment', 'PaymentController@indexx');
     Route::get('/myAccount','AuthController@myAccount');
     Route::get('/transactionHistory', 'AuthController@transactionHistory');    
-    Route::post('/complete', 'CompleteController@complete');   
+    Route::get('/complete', 'CompleteController@complete');   
 });
 
 Route::group(['middleware'=>'RedirectMyAccount'],function (){
@@ -42,3 +42,10 @@ Route::group(['middleware'=>'RedirectMyAccount'],function (){
 });
 
 Route::get('/allCinemas/{result}', 'CinemaController@allCinemas');
+
+// //payment form
+Route::get('/paymentform', 'PaymentController@index');
+// route for processing payment
+Route::post('paypal', 'PaymentController@payWithpaypal');
+// route for check status of the payment
+Route::get('status', 'PaymentController@getPaymentStatus');
