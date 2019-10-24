@@ -42,3 +42,8 @@ Route::group(['middleware'=>'RedirectMyAccount'],function (){
 });
 
 Route::get('/allCinemas/{result}', 'CinemaController@allCinemas');
+
+
+//admin
+Route::get('/viewAddFilms', 'AdminController@viewAddFilms');
+Route::get('/addFilms', 'AdminController@addFilms');

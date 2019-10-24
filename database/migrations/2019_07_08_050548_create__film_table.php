@@ -24,7 +24,7 @@ class CreateFilmTable extends Migration
             $table->enum('trang_thai',['0','1']);
             $table->string('image');
             $table->string('rated');
-            $table->string('desc');
+            $table->text('desc');
         });
     }
 
