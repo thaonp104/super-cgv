@@ -2,6 +2,7 @@
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylePhimDangChieu.css')}}">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @endsection
 
 @section('content')
@@ -89,5 +90,18 @@
             @endif
         @endforeach
     </ul>
+
+    <div id="movies"></div>
+    <button id="showMovies" onclick="getMovies()">Show</button>
+
+    <script>
+        function getMovies(){
+            axios.get('https://api.themoviedb.org/3/movie/popular?api_key=771440ca8394b12ebf5b24a142892caa&language=en-US&page=1')
+                .then( response => {
+                    console.log(response->toArray());
+                    // $('#movies').html(response->toArray());
+                });
+        }
+    </script>
 @endsection
    
