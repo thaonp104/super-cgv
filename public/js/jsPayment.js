@@ -113,6 +113,15 @@ $(document).ready(function(){
         disable = 1 ;
         document.getElementsByClassName('step1-container')[0].style.opacity = "0.5";
     }
+    window.paypal = function(){
+        document.getElementsByClassName('atm-card')[1].style.display = "none";
+        document.getElementsByClassName('international-card')[1].style.display = "none";
+
+        disable = 1 ;
+        document.getElementsByClassName('step1-container')[0].style.opacity = "0.5";
+
+        document.getElementById('paypal-button').style.display = "block";
+    }
     window.pay = function(){
         if( document.getElementById('iaccept').checked == false || disable != 1 )
             if( disable == 0 ) alert('Hãy chọn hình thúc thanh toán');

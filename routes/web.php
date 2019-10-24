@@ -43,6 +43,13 @@ Route::group(['middleware'=>'RedirectMyAccount'],function (){
 
 Route::get('/allCinemas/{result}', 'CinemaController@allCinemas');
 
+// //payment form
+Route::get('/paymentform', 'PaymentController@index');
+// route for processing payment
+Route::post('paypal', 'PaymentController@payWithpaypal');
+// route for check status of the payment
+Route::get('status', 'PaymentController@getPaymentStatus');
+
 
 //admin
 Route::get('/viewAddFilms', 'AdminController@viewAddFilms');

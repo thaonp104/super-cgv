@@ -1,6 +1,13 @@
 
 @extends('main2')
 @section('content')
+    
+
+
+
+
+
+
 
     <div class="container-fluit">
         <div class="row1">
