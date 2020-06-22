@@ -11,10 +11,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/styleBooking.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylePhimDangChieu.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylePayment.css')}}">
-    
+
     <script src="{{asset('js/jsBooking.js')}}"></script>
     <script src="{{asset('js/jsPayment.js')}}"></script>
-    
+
 </head>
 <body>
    <!-- HEADER -->
@@ -55,7 +55,7 @@
                 </li>
                 <li><a href="#">THÀNH VIÊN</a>
                     <ul class="sub-menu">
-                        <li><a href="#">Tài Khoản CGV</a></li>
+                        <li><a href="/myAccount">Tài Khoản CGV</a></li>
                         <li><a href="#">Quyền Lợi</a></li>
                     </ul>
                 </li>

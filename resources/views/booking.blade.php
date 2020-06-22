@@ -17,14 +17,14 @@
         <div class="booking-container">
             <div class="booking-container-header"><b>Người / Ghế</b></div>
             <div class="booking-container-detail">
-                <div class="screen-img"></div>      
-                
-                
+                <div class="screen-img"></div>
+
+
                 <div class="seat-place">
-                    <?php 
+                    <?php
                     $k = 0 ;
-                    for( $i = 1 ; $i <= 10 ; $i++ ){  
-                    ?>  
+                    for( $i = 1 ; $i <= 10 ; $i++ ){
+                    ?>
                         <div class="row">
                     <?php
                         for( $j = 15 ; $j >= 1 ; $j-- ){
@@ -44,29 +44,29 @@
                                     if( $map_type[$i][$j] == 'standard' ){
                     ?>
                                         <div class="seat seat-standard" onclick="selectedSeat(this)">{{ $seat[$k++]->id }}</div>
-                    <?php 
+                    <?php
                                     }
                                     if( $map_type[$i][$j] == 'vipprime' ){
                     ?>
                                         <div class="seat seat-vipprime" onclick="selectedSeat(this)">{{ $seat[$k++]->id }}</div>
-                    <?php 
+                    <?php
                                     }
                                     if( $map_type[$i][$j] == 'sw' ){
                     ?>
                                         <div class="seat seat-sw" onclick="selectedSeat(this)">{{ $seat[$k++]->id }}</div>
-                    <?php 
+                    <?php
                                     }
                                 }
                             }
                             if( $map[$i][$j] == 0 ){
                     ?>
                                 <div class="seat seat-empty"></div>
-                    <?php    
+                    <?php
                             }
                         }
                     ?>
                         </div>
-                    <?php    
+                    <?php
                     }
                     ?>
                 </div>
@@ -77,7 +77,7 @@
                     <div class="notice">
                         <div class="checked icon">Checked</div>
                         <div class="occupied icon">Đã chọn</div>
-                        <div class="unavailable icon">Không thể chọn</div>                       
+                        <div class="unavailable icon">Không thể chọn</div>
                     </div>
                     <div class="notice">
                         <div class="zone-standard icon">Thường</div>

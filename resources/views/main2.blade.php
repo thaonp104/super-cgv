@@ -108,7 +108,7 @@
                             <!-- <div class="son"> -->
                             <ul>
                                 <li>
-                                    <a href="#">Tài Khoản CGV <i class="	far fa-hand-point-right"></i></a>
+                                    <a href="/myAccount">Tài Khoản CGV <i class="	far fa-hand-point-right"></i></a>
                                 </li>
                                 <li>
                                     <a href="#">Quyền Lợi <i class="	far fa-hand-point-right"></i></a>

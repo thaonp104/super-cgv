@@ -30,10 +30,11 @@ Route::post('/login_result','indexController@login_result');
 Route::post('/login_result','AuthController@login');
 
 Route::group(['middleware'=>'clientRoute'],function (){
-    Route::post('/payment', 'PaymentController@index');
+    Route::post('/payment', 'PaymentController@payWithpaypal');
+//    Route::post('/payment', 'PaymentController@index');
     Route::get('/myAccount','AuthController@myAccount');
-    Route::get('/transactionHistory', 'AuthController@transactionHistory');    
-    Route::post('/complete', 'CompleteController@complete');   
+    Route::get('/transactionHistory', 'AuthController@transactionHistory');
+    Route::post('/complete', 'CompleteController@complete');
 });
 
 Route::group(['middleware'=>'RedirectMyAccount'],function (){
@@ -54,3 +55,7 @@ Route::get('status', 'PaymentController@getPaymentStatus');
 //admin
 Route::get('/viewAddFilms', 'AdminController@viewAddFilms');
 Route::get('/addFilms', 'AdminController@addFilms');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

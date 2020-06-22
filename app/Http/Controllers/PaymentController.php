@@ -35,7 +35,7 @@ class PaymentController extends Controller
 
     private $_api_context;
     private $rq = [] ;
-    
+
     /**
      * Create a new controller instance.
      *
@@ -61,14 +61,17 @@ class PaymentController extends Controller
     {
         // $this->rq = $request;
         // dd($this->rq);
-            $seats = explode(', ',$request->seats);
-                
+            var_dump($request->seat_detail);
+//            $seats = explode(', ',$request->seat_detail);
+            $seats = [486, 487];
+
+
                 // insert Bill vừa đặt vào CSDL
-            DB::insert('insert into bill (payment_date, payment_type, quantity, 
-                        client_id, member_id) values (?, ?, ?, ?, ?)', 
-                        [$request->paymentDate, $request->typeOfPayment, sizeof($seats),
-                        $request->client_id, $request->member_id]);
-            
+            DB::insert('insert into bill (payment_date, payment_type, quantity,
+                        client_id, member_id) values (?, ?, ?, ?, ?)',
+                        [$request->paymentDate, 'COD', sizeof($seats),
+                            \auth()->user()->id, \auth()->user()->id]);
+
             $p = $request->price ;
             $price = 0 ;
             for( $i = 0 ; $i < strlen($p) ; $i++ )   // đổi tổng giá vé từ string sang int
@@ -76,23 +79,23 @@ class PaymentController extends Controller
                     if( $p[$i] != '.' ) $price = $price*10 + (int)$p[$i] ;
                 }
                 else break ;
-                
+
                 // lấy ra bill vừa cho vào CSDL để lấy bill_id cho vào từng ticket
             $bill_id = Bill::where('payment_date', $request->paymentDate)
-                            ->where('payment_type', $request->typeOfPayment)
+                            ->where('payment_type', 'COD')
                             ->where('quantity', sizeof($seats))
-                            ->where('client_id', $request->client_id)
-                            ->where('member_id', $request->member_id)->first();
+                            ->where('client_id', \auth()->user()->id)
+                            ->where('member_id', \auth()->user()->id)->first();
 
                 // insert từng ticket vừa đặt vào CSDL
             foreach( $seats as $seat )
-                DB::insert('insert into ticket (price, seat_id, schedule_id, bill_id) 
+                DB::insert('insert into ticket (price, seat_id, schedule_id, bill_id)
                             values (?, ?, ?, ?)', [$price/sizeof($seats), $seat, $request->schedule_id,
                             $bill_id->id]);
 
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
-        
+
         $item_1 = new Item();
         $item_1->setName('Vé xem phim') /** item name **/
             ->setCurrency('USD')
@@ -113,14 +116,14 @@ class PaymentController extends Controller
         $redirect_urls = new RedirectUrls();
         $redirect_urls->setReturnUrl(URL::to('status')) /** Specify return URL **/
             ->setCancelUrl(URL::to('status'));
-        
+
             $inputFields = new InputFields();
             $inputFields->setNoShipping(1);
             $webProfile = new WebProfile();
             $webProfile->setName('test' . uniqid())->setInputFields($inputFields);
             $webProfileId = $webProfile->create($this->_api_context)->getId();
             $payment = new Payment();
-            $payment->setExperienceProfileId($webProfileId); // no shipping    
+            $payment->setExperienceProfileId($webProfileId); // no shipping
 
         $payment->setIntent('Sale')
             ->setPayer($payer)
@@ -171,7 +174,7 @@ class PaymentController extends Controller
         if ($result->getState() == 'approved') {
             \Session::put('success', 'Payment success');
 // dd($this->rq);
-            
+
 
             return Redirect::to(URL::to('complete'));
         }

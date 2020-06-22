@@ -9,7 +9,8 @@
     				class="w3-button w3-green w3-large w3-display-topright">&times;</span>
             <p>{!! $message !!}</p>
         </div>
-        <?php Session::forget('success');?>
+        <?php Session::forget('success');
+        ?>
         @endif
 
         @if ($message = Session::get('error'))
